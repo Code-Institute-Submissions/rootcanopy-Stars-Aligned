@@ -1,7 +1,7 @@
 
   const apodURL = "https://api.nasa.gov/planetary/apod?api_key=";
-  var apod_key = "aTzWAFGW6diC9Gmiv2motIrgf68tuKJyXiXxQ8IL";
-  var data;
+  const apod_key = "aTzWAFGW6diC9Gmiv2motIrgf68tuKJyXiXxQ8IL";
+  let data;
   
   function api_call() {
       var xhr = new XMLHttpRequest();
@@ -12,7 +12,7 @@
           if (this.readyState === 4 && this.status === 200) {
               data = JSON.parse(this.responseText);
   
-              console.log(data);
+              //console.log(data);
   
           }
       };
@@ -33,9 +33,9 @@
   
   
   //adding some effects                           /* To Do, All this code needs to be checked/ debugged */
-  var modal = document.getElementById('myModal');                       
-  var btn = document.getElementById('myBtn');
-  var closebtn = document.getElementsByClassName('btn-close');
+  let modal = document.getElementById('myModal');                       
+  let btn = document.getElementById('myBtn');
+  let closebtn = document.getElementsByClassName('btn-close');
   
   btn.onclick = function () {
       modal.style.display = "block";
@@ -52,7 +52,7 @@
   };
   //making the navbar responsive with js
   function myFunction() { /*unused variable */
-      var resNav = document.getElementById("myNasaNav");
+      let resNav = document.getElementById("myNasaNav");
       if (resNav.className === "nasaNav") {
           resNav.className += " responsive";
       } else {
@@ -62,20 +62,29 @@
   
   /* -------- EPIC api images slideshow ------ */
   
-  const EPICurl = "https://api.nasa.gov/EPIC/api/natural?api_key=";
+  const EPICurl = "https://images-api.nasa.gov/search?q=rover";
   
-  var api_key = "aTzWAFGW6diC9Gmiv2motIrgf68tuKJyXiXxQ8IL";
-  var img_url = "";	/*unused */
-  var epicObj;
-  var xhr = new XMLHttpRequest();
+  //var api_key = "aTzWAFGW6diC9Gmiv2motIrgf68tuKJyXiXxQ8IL";
+  //var img_url = "";	/*unused */
+  const epicObj;
+  let xhr = new XMLHttpRequest();
   
-  xhr.open("GET", EPICurl + api_key, true);
-  
-  xhr.addEventListener("load", function () {
+  xhr.open("GET", EPICurl, true);
+
+  xhr.onreadystatechange = function() {
       if (this.readyState === 4 && this.status === 200) {
           epicObj = JSON.parse(this.responseText);
   
           console.log(epicObj);
-      }
-      xhr.send();
-  });
+      }     
+  };
+  
+  xhr.send();
+
+  //function() {
+   
+  //retrieve the user input 
+
+  //define the em, the path to the array of data we want - the abibilty to extract the data from the data we recieve
+  //define the em, function > foo loops to loop through the array of content and pictures and creat the html code to manip dom with the output
+  //
