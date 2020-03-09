@@ -60,29 +60,29 @@ function myFunction() {
     }
 } /* https://www.w3schools.com/howto/howto_js_topnav_responsive.asp */
 
-/* -------- EPIC Nasa search api ------ */
 
-const EPICurl = "https://images-api.nasa.gov/search?q=rover";
-let epicObj;
-let xhr = new XMLHttpRequest();
+//this is the search library function
+function search() {
+    let user_input = document.getElementById("searchInput")
+    /* -------- EPIC Nasa search api ------ */
+    let xhr = new XMLHttpRequest();
 
-xhr.open("GET", EPICurl, true);
+    xhr.open("GET", EPICurl, true);
 
-xhr.onreadystatechange = function () {
-    if (this.readyState === 4 && this.status === 200) {
-        epicObj = JSON.parse(this.responseText);
+    xhr.onreadystatechange = function () {
 
-        console.log(epicObj);
+        if (this.readyState === 4 && this.status === 200) {
+            epicObj = JSON.parse(this.responseText);
+
+            console.log(epicObj);
+        }
     }
+    xhr.send();
 };
-xhr.send();
 
-//
-function searchInput() {
-    let
-}
-
-
+const EPICurl = "https://images-api.nasa.gov/search?";
+let epicObj;
+let query = "q=" + user_input;
 //retrieve the user input 
 
 //define the em, the path to the array of data we want - the abibilty to extract the data from the data we recieve
