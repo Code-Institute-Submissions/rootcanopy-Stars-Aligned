@@ -63,7 +63,8 @@ function myFunction() {
 
 //this is the search library function
 function search() {
-    let user_input = document.getElementById("searchInput")
+    let user_input = document.getElementById("searchInput").value;
+    console.log(user_input);
     /* -------- EPIC Nasa search api ------ */
     let xhr = new XMLHttpRequest();
 
@@ -78,11 +79,14 @@ function search() {
         }
     }
     xhr.send();
-};
+
 
 const EPICurl = "https://images-api.nasa.gov/search?";
 let epicObj;
 let query = "q=" + user_input;
+
+};
+
 //retrieve the user input 
 
 //define the em, the path to the array of data we want - the abibilty to extract the data from the data we recieve

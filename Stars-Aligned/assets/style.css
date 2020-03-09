@@ -67,7 +67,7 @@ main {
 }
 
 /*<!------ Apod button and modal --> */
-button {
+button.myBtn {
     font-size: 1.25em;
     font-family: 'Coustard';
     background: transparent;
