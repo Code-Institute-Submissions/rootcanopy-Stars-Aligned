@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA-API</title>
+    <script src="assets/joke.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/style.css">
+    
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <nav class="nasaNav" id="myNasaNav">
+                <img class="gif" src="assets/Imgur.gif" alt="moving moon man">
+
+                <a class="active" href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#another">Another</a>
+
+                <input id="search" class="searchInput" type="text" placeholder="Search Images and videos" />
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-space-shuttle"></i>
+                </a>
+            </nav>
+        </header>
+            
+            <div class="backdrop"></div>
+            <button id="myBtn" onclick="showData()">Photo of The Day</button>
+            <!--      modal   body -->
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+            <!--- /* picture of the day content */ -->
+                    <h3 id="title"></h3>
+                    <h4>Date: <span id="date"></span></h4>
+                    <p id="copyright"></p>
+                    <img id="pic" src="" alt="NASA" />
+                    <p id="explanation"></p>
+
+                    <button class="btn-close">&times;</button>
+
+                </div>
+            </div>
+            <div id="result>"testing"></div>
+
+        <footer>
+            <!-- footer needed  -->
+        </footer>
+
+    </div>
+
+    
+    <script src="https://d3js.org/d3.v5.min.js" SameSite="Lax"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+//picture of the day
+
+
+https://api.nasa.gov/planetary/apod?
+
+api_key=aTzWAFGW6diC9Gmiv2motIrgf68tuKJyXiXxQ8IL
+
+//err 404 => https://api.nasa.gov/insight_weather/?api_key=aTzWAFGW6diC9Gmiv2motIrgf68tuKJyXiXxQ8IL
+
+///the images and video search
+https://images-api.nasa.gov/search?q={q}api_key=aTzWAFGW6diC9Gmiv2motIrgf68tuKJyXiXxQ8IL
+https://images-api.nasa.gov/asset/{nasa_id}
+https://images-api.nasa.gov/metadata/{nasa_id}
+https://images-api.nasa.gov/captions/{nasa_id}
+
+//The Epic api
+"https://epic.gsfc.nasa.gov/EPIC/api/natural?api_key=aTzWAFGW6diC9Gmiv2motIrgf68tuKJyXiXxQ8IL"
+"https://api.nasa.gov/EPIC/api/natural?api_key=aTzWAFGW6diC9Gmiv2motIrgf68tuKJyXiXxQ8IL"

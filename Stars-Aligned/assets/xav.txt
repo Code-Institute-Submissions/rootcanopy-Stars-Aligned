@@ -1,0 +1,40 @@
+function search() {
+
+    //Getting user input
+    var domainScan = document.getElementById("domainScan").value;
+    //console.log(domainScan);
+}
+    //call the api 
+    //server
+    var endpoint = "https://api.threatintelligenceplatform.com/v1/infrastructureAnalysis?domainName=threatintelligenceplatform.com";
+    var key = "&apiKeyat_DiKux3eBKBmea8lcazlVB9G71zt9n";
+    var query = "domainName" + domainScan;
+    var url = endpoint + key + "&" + query;
+
+    //Request Object
+    var domain_request = new XMLHttpRequest();
+
+    domain_request.onreadystatechange = function() {
+
+        if (this.readyState == 4 && this.status == 200) {
+
+            //function to be called upon receiving a successfull response
+            the_response = domain_request.responseText; //response = data
+
+            //response I get back is of type
+            console.log(typeOf(the_response));
+
+            //converting it to object --> using Json.parse
+            data = JSON.parse(the_response);
+
+            displayMyDataInPage(domain_array);
+
+        } else {
+
+            //if the domain_request doesnt work
+            console.log('this isint working');
+        }
+    };
+
+    domain_request.open("GET", url, true);
+    domain_request.send();

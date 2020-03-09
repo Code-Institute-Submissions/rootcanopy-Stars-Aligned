@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css?family=Coustard:100,200,300,400,500,600;');
+@import url('https://fonts.googleapis.com/css?family=Space+Mono:100,200,300,400,500,600;');
+
+html {
+    font-family: 'Space+Mono', sans-serif;
+    height: 100%;
+    color: white;
+}
+
+body {
+    background-image: url("https://wallpaperose.com/wp-content/uploads/2013/03/Nasa-Mars-Curiosity-Wallpaper.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    margin: 0;
+    font-family: 'Space+Mono', sans-serif;
+    height: 100%;
+    text-align: center;
+    overflow: hidden
+}
+/*--------  Nav bar --------> */
+
+img.gif {
+    height: 80px;
+    float: left;
+    padding-bottom: 20px
+}
+nav.nasaNav {
+    background-color: black; /* to be changed */
+    overflow: auto;
+    padding-top:25px;
+    z-index: 10;
+}
+.nasaNav a { 
+    float: right;
+    display: block;
+    color: white;
+    font-size: 1.25rem;
+    font-family: 'Coustard',sans-serif;
+    letter-spacing: 2px;
+    text-align: center;
+    padding: 20px 10px 4px ;
+}
+input {
+    top:4rem;
+    height: 3em;
+}
+nav a:hover{
+    border-color: #fa923f;
+    color: #fa923f;
+}
+nav a:active{
+    background-color: indianred;
+
+}
+nav a.icon{
+    font-size: 3em;
+    display: none;
+}
+
+/* ----- main element ---*/
+
+main {
+    margin-top: 100px;
+}
+
+/*<!------ Apod button and modal --> */
+button {
+    font-size: 1.25em;
+    font-family: 'Coustard';
+    background: transparent;
+    color: white;
+    border: 2px solid;
+    border-radius: 1em;
+    cursor: pointer;
+    position:absolute;
+    transition: .5s ease;
+    top: 20%;
+    left:20px;
+}
+button:hover,
+button:active {    /* active not working */
+    border-color: #fa923f;
+    color: #fa923f;
+}
+button.btn-close:hover {
+    color: red;
+}
+.btn-close {
+    text-align: center;
+}
+
+#pic {
+    width: 700px;
+    height: 400px;
+}
+
+.modal {  
+    display: none;  /*set to none when setup in js*/
+    background-color: rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 200;
+    font-family: inherit;
+    height: inherit;
+    width: 50%;
+    margin: auto;
+    padding: 30px;
+    
+}
+
+.backdrop {
+    display: none; /* to be played with */
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    right: auto;
+    left: auto;
+    background: rgba(0,0,0,0.5);
+    z-index:100;
+}
+
+/* ----------- Responsive @media NavBar------ */
+
+@media screen and (max-width: 800px) {
+    .nasaNav a:not(:first-child) {
+        display: none;
+    }
+    .nasaNav a.icon {
+      float: right;
+      display: block;
+    }
+  }
+
+@media screen and (max-width: 800px) {
+    .nasaNav .responsive {
+        position: relative;
+    }
+    .nasaNav .responsive a.icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .nasaNav .responsive a {
+      float: none;
+      display: block;
+      text-align: right;
+    }
+  }
