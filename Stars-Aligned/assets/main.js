@@ -66,7 +66,7 @@
   
   //var api_key = "aTzWAFGW6diC9Gmiv2motIrgf68tuKJyXiXxQ8IL";
   //var img_url = "";	/*unused */
-  const epicObj;
+  let epicObj;
   let xhr = new XMLHttpRequest();
   
   xhr.open("GET", EPICurl, true);
@@ -80,6 +80,8 @@
   };
   
   xhr.send();
+
+  function 
 
   //function() {
    

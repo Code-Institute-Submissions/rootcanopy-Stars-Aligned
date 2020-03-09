@@ -123,7 +123,7 @@ button.btn-close:hover {
 
 /* ----------- Responsive @media NavBar------ */
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
     .nasaNav a:not(:first-child) {
         display: none;
     }
@@ -133,7 +133,7 @@ button.btn-close:hover {
     }
   }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
     .nasaNav .responsive {
         position: relative;
     }
