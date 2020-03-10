@@ -1,11 +1,11 @@
 const apodURL = "https://api.nasa.gov/planetary/apod?api_key=";
-const apod_key = "aTzWAFGW6diC9Gmiv2motIrgf68tuKJyXiXxQ8IL";
+const api_key = "aTzWAFGW6diC9Gmiv2motIrgf68tuKJyXiXxQ8IL";
 let data;
 
 function api_call() {
     var xhr = new XMLHttpRequest();
 
-    xhr.open("GET", apodURL + apod_key, true);
+    xhr.open("GET", apodURL + api_key, true);
 
     xhr.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
@@ -47,6 +47,8 @@ closebtn.onclick = function () {
 window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
+    } else {
+        this.console.log('window click not');
     }
 };
 //making the navbar responsive with js
@@ -60,11 +62,15 @@ function myFunction() {
     }
 } /* https://www.w3schools.com/howto/howto_js_topnav_responsive.asp */
 
+const EPICurl = "https://images-api.nasa.gov/search?";
+let epicObj;
+let query = "q=" + api_key + _search;
 
 //this is the search library function
 function search() {
-    let user_input = document.getElementById("searchInput").value;
-    console.log(user_input);
+    let user_input = document.getElementById("searchInput");
+        console.log('search');
+
     /* -------- EPIC Nasa search api ------ */
     let xhr = new XMLHttpRequest();
 
@@ -72,19 +78,16 @@ function search() {
 
     xhr.onreadystatechange = function () {
 
-        if (this.readyState === 4 && this.status === 200) {
+        if (this.readyState == 4 && this.status == 200) {
             epicObj = JSON.parse(this.responseText);
 
             console.log(epicObj);
         }
+        else {
+            console.log("else, is here");
+        }
     }
     xhr.send();
-
-
-const EPICurl = "https://images-api.nasa.gov/search?";
-let epicObj;
-let query = "q=" + user_input;
-
 };
 
 //retrieve the user input 
