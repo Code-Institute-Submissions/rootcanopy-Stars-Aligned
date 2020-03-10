@@ -11,32 +11,20 @@
 </head>
 
 <body>
-<div class="container">
-        <header>
-            <nav class="nasaNav" id="myNasaNav">
-                <!--<img class="gif" src="assets/Imgur.gif" alt="moving moon man">-->
+    <header>
 
-                <a class="active" href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#another">Another</a>
-
-                <!-- user input search function -->
-                <form>
-                <input id="searchInput" type="text" placeholder="Search images and videos"></input>
-                <!-- This is the user search button -->
-                <button class="searchButton" id="trigger_search" onclick="search()">Go!</button>
-                </form>
-                <!--- this is for the responsive navbar -->
-                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                    <i class="fa fa-space-shuttle"></i>
-                </a>
-            </nav>
-        </<div>
+            <!-- user input search function -->
+        <div class="searchBox">
+            <input id="searchInput" type="search" placeholder="Search images and videos"></input>
+            <!-- This is the user search button -->
+            <button class="searchButton" onclick="search()">Go!</button>
+        </div>
 
         <div class="backdrop"></div>
         <button id="myBtn" class="myBtn" onclick="showData()">Photo of The Day</button>
         <!--      modal   body -->
         <div id="myModal" class="modal">
+            
             <div class="modal-content">
                 <!--- /* picture of the day content */ -->
                 <h3 id="title"></h3>
@@ -50,15 +38,14 @@
             </div>
         </div>
         <div id="result"></div>
+    </header>
 
-        <footer>
-            <!-- footer needed  -->
-        </footer>
-
-    </div>
+    <footer>
+        <!-- footer needed  -->
+    </footer>
 
     <script src="./assets/main.js"></script>
-   <!---<script src="https://d3js.org/d3.v5.min.js" SameSite="Lax"></script> -->
+    <!---<script src="https://d3js.org/d3.v5.min.js" SameSite="Lax"></script> -->
 
 </body>
 
