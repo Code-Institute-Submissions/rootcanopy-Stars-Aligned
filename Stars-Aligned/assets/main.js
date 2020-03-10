@@ -44,13 +44,14 @@ closebtn.onclick = function () {
     modal.style.display = "none";
 };
 
-/*window.onclick = function (event) {
+window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
     } else {
         this.console.log('window click not working');
     }
-};*/
+};
+
 //making the navbar responsive with js
 function myFunction() {
     /*unused variable */
@@ -88,14 +89,16 @@ function search() {
 };
 
 function displayNasa(response) {
-    //let string = "";
+    //let objct = "";
+
     response = JSON.parse(response);
     //for (let i = 0; i < response.collection.length; i++){
+      //  objct 
         console.log(response.collection);
     }
 
 //retrieve the user input 
 
 //define the path to the array of data we want - the abibilty to extract the data from the data we recieve
-//define the function > for loop, to loop through the array of content and pictures and creat the html code to manip dom with the output
+//define the function > for loop, to loop through the array of content and pictures and create the html code to manip dom with the output
 //
