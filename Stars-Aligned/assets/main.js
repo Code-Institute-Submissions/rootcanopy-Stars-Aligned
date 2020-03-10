@@ -66,32 +66,34 @@ function myFunction() {
 //this is the search library function
 const searchUrl = "https://images-api.nasa.gov/";
 const queryString = "search?title="; //"&description=" + "&media_type="
+var nasaData;
 
 function search() {
     let searchInput = document.getElementById("searchInput").value;
-    console.log('hello');
 
     /* -------- EPIC Nasa search api req------ */
-    let xhr = new XMLHttpRequest();
+    var xhr = new XMLHttpRequest();
 
     xhr.onreadystatechange = function () {
-
         if (this.readyState === 4 && this.status === 200) {
-            nasaData = JSON.parse(this.responseText);
-
-            console.log(nasaData);
+            displayNasa(xhr.responseText);
+            //displayNasa(xhr.responseText);
+            //console.log(typeof(nasaData));
         }
     };
-
-    let results = searchUrl + queryString + searchInput;
-    let nasaData;
-        console.log(results);
-
-    xhr.open("GET", results, true);
+    let nasaLib = searchUrl + queryString + searchInput;
+    //let nasaData;
+    xhr.open("GET", nasaLib, true);
     xhr.send();
 };
 
-
+function displayNasa(response) {
+    //let string = "";
+    response = JSON.parse(response);
+    for (let i = 0; i < nasaData.results.length; i++){
+        console.log(response.collection);
+    }
+}
 //retrieve the user input 
 
 //define the path to the array of data we want - the abibilty to extract the data from the data we recieve
