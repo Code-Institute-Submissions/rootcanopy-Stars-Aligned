@@ -64,31 +64,32 @@ function myFunction() {
 
 
 //this is the search library function
-const searchUrl = "https://images-api.nasa.gov/search?";
-
-let query = "q=" + _search;
-let library = searchUrl + query + api_key;
-let epicObj;
+const searchUrl = "https://images-api.nasa.gov/";
+const queryString = "search?q="; //"&description=" + "&media_type="
 
 function search() {
-    //let _search = document.getElementById("searchInput");
-    //console.log('search');
+    let searchInput = document.getElementById("searchInput").value;
+    console.log('hello');
 
-    /* -------- EPIC Nasa search api Req------ */
+    /* -------- EPIC Nasa search api req------ */
     let xhr = new XMLHttpRequest();
-
-    xhr.open("GET", searchUrl + query, true);
 
     xhr.onreadystatechange = function () {
 
         if (this.readyState === 4 && this.status === 200) {
-            epicObj = JSON.parse(this.responseText);
+            nasaData = JSON.parse(this.responseText);
 
-            console.log(epicObj);
+            console.log(nasaData);
+
         } else {
             console.log("else, is here");
         }
-    }
+    };
+    let results = searchUrl + queryString + searchInput;
+    let nasaData;
+        console.log(results);
+
+    xhr.open("GET", searchUrl + queryString, true);
     xhr.send();
 };
 
