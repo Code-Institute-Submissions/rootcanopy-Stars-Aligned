@@ -90,10 +90,10 @@ function search() {
 function displayNasa(response) {
     //let string = "";
     response = JSON.parse(response);
-    for (let i = 0; i < nasaData.results.length; i++){
+    //for (let i = 0; i < response.collection.length; i++){
         console.log(response.collection);
     }
-}
+
 //retrieve the user input 
 
 //define the path to the array of data we want - the abibilty to extract the data from the data we recieve
