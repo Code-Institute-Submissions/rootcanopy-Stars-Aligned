@@ -65,7 +65,7 @@ function myFunction() {
 
 //this is the search library function
 const searchUrl = "https://images-api.nasa.gov/";
-const queryString = "search?q="; //"&description=" + "&media_type="
+const queryString = "search?title="; //"&description=" + "&media_type="
 
 function search() {
     let searchInput = document.getElementById("searchInput").value;
@@ -80,16 +80,14 @@ function search() {
             nasaData = JSON.parse(this.responseText);
 
             console.log(nasaData);
-
-        } else {
-            console.log("else, is here");
         }
     };
+
     let results = searchUrl + queryString + searchInput;
     let nasaData;
         console.log(results);
 
-    xhr.open("GET", searchUrl + queryString, true);
+    xhr.open("GET", results, true);
     xhr.send();
 };
 

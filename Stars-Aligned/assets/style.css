@@ -14,7 +14,7 @@ body {
     width: 100vw;
     height: 100vh;
     position: relative;
-    margin: 0;
+    margin: auto;
 
     font-family: 'Space+Mono', sans-serif;
     height: 100%;
@@ -51,7 +51,7 @@ nav.nasaNav {
 input {
     top:4rem;
     height: 3em;
-    text-align: center;
+    margin: ;
 }
 nav a:hover{
     border-color: #fa923f;
