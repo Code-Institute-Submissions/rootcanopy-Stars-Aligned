@@ -77,7 +77,7 @@ function search() {
     xhr.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
             displayNasa(xhr.responseText);
-            console.log("results");
+            //console.log("results");
         }
     };
     let nasaLib = searchUrl + queryString + searchInput;
@@ -92,7 +92,7 @@ function displayNasa(response) {
     response = JSON.parse(response);
     //for (i = 0; i < response.length; i++) {
 
-        console.log(response);
+        console.log(response.collection);
     }
 
 //retrieve the user input 
