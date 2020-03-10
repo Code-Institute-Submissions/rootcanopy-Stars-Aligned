@@ -44,13 +44,13 @@ closebtn.onclick = function () {
     modal.style.display = "none";
 };
 
-window.onclick = function (event) {
+/*window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
     } else {
-        this.console.log('window click not');
+        this.console.log('window click not working');
     }
-};
+};*/
 //making the navbar responsive with js
 function myFunction() {
     /*unused variable */
@@ -62,36 +62,39 @@ function myFunction() {
     }
 } /* https://www.w3schools.com/howto/howto_js_topnav_responsive.asp */
 
-const EPICurl = "https://images-api.nasa.gov/search?";
-let epicObj;
-let query = "q=" + api_key + _search;
 
 //this is the search library function
-function search() {
-    let user_input = document.getElementById("searchInput");
-        console.log('search');
+const searchUrl = "https://images-api.nasa.gov/search?";
 
-    /* -------- EPIC Nasa search api ------ */
+let query = "q=" + _search;
+let library = searchUrl + query + api_key;
+let epicObj;
+
+function search() {
+    //let _search = document.getElementById("searchInput");
+    //console.log('search');
+
+    /* -------- EPIC Nasa search api Req------ */
     let xhr = new XMLHttpRequest();
 
-    xhr.open("GET", EPICurl, true);
+    xhr.open("GET", searchUrl + query, true);
 
     xhr.onreadystatechange = function () {
 
-        if (this.readyState == 4 && this.status == 200) {
+        if (this.readyState === 4 && this.status === 200) {
             epicObj = JSON.parse(this.responseText);
 
             console.log(epicObj);
-        }
-        else {
+        } else {
             console.log("else, is here");
         }
     }
     xhr.send();
 };
 
+
 //retrieve the user input 
 
-//define the em, the path to the array of data we want - the abibilty to extract the data from the data we recieve
-//define the em, function > foo loops to loop through the array of content and pictures and creat the html code to manip dom with the output
+//define the path to the array of data we want - the abibilty to extract the data from the data we recieve
+//define the function > for loop, to loop through the array of content and pictures and creat the html code to manip dom with the output
 //
