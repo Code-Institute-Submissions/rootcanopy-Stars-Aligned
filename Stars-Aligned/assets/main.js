@@ -69,7 +69,7 @@ const searchUrl = "https://images-api.nasa.gov";
 const queryString = "/search?title="; //+ "q=&media_type=image"; // "&description=" + ""
 
 function search() {
-    let searchInput = document.getElementById("searchInput");
+    let searchInput = document.getElementById("searchInput").value;
 
     /* -------- EPIC Nasa search api req------ */
     var xhr = new XMLHttpRequest();
@@ -77,14 +77,14 @@ function search() {
     xhr.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
             displayNasa(xhr.responseText);
-            console.log(this.responseText);
+            console.log("results");
         }
     };
     let nasaLib = searchUrl + queryString + searchInput;
 
     xhr.open("GET", nasaLib, true);
     xhr.send();
-}
+};
 
 function displayNasa(response) {
     //let i;
@@ -92,9 +92,9 @@ function displayNasa(response) {
     response = JSON.parse(response);
     //for (i = 0; i < response.length; i++) {
 
-        console.log(response.results);
+        console.log(response);
     }
-//;
+
 //retrieve the user input 
 
 //define the path to the array of data we want - the abibilty to extract the data from the data we recieve
