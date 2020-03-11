@@ -28,8 +28,6 @@ function showData() {
 document.getElementById("myBtn").addEventListener("click", showData);
 api_call();
 
-
-
 //adding some effects                           /* To Do, All this code needs to be checked/ debugged */
 let modal = document.getElementById('ModalA');
 let btn = document.getElementById('myBtn');
@@ -49,15 +47,13 @@ function closeAPOD() {
 window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
-    } else {
-        this.console.log('window click not working');
     }
 };
 
 
 //this is the api request
 const searchUrl = "https://images-api.nasa.gov/";
-const query = "search?q="; //+ "media_type=image"; // "&description=" + ""
+const query = "search?q="; //+ "image"; // "&description=" + ""
 
 function searchNasa() {
     let Input = document.getElementById("searchInput").value;
@@ -77,7 +73,7 @@ function searchNasa() {
 }
 
 function Library(result) {
-    $(".nasaIMAGES").empty();
+    //$(".nasa").empty();
 
     for (let i = 0; i < result.collection.items.length; i++) {
         document.getElementById("test").innerHTML += '<div class="library"><a href="' +result.collection.items[i].links[0].href + '"><img  width="600" height="600" src="' + result.collection.items[i].links[0].href + '"></a></<div></div>';

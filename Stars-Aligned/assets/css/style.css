@@ -33,7 +33,7 @@ main {
 }
 
 
-/*<!------ Apod button and modal --> */
+/*------ Apod button ----- */
 
 button.myBtn {
     font-size: 1.25em;
@@ -65,9 +65,11 @@ button.btn-close:hover {
     height: 400px;
 }
 
+/* ---- APODmodal ---- */
+
 .modalAPOD {  
     display: none; /*set to none when setup in js*/
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,1.5);
     position: fixed;
     z-index: 200;
     overflow:auto;
@@ -89,8 +91,8 @@ button.btn-close:hover {
     display: none;
 }
 
-.backdrop {
-    display: none; /* to be played with */
+/*.backdrop {
+    display: none; /* to be played with 
     position: fixed;
     width: 100vw;
     height: 100vh;
@@ -98,11 +100,35 @@ button.btn-close:hover {
     left: auto;
     background: rgba(0,0,0,0.5);
     z-index:100;
+}*/
+
+/* ----------- library Search ------------ */
+
+input {
+    height: 50px;
+    font-size: 20px;
+    /*vertical-align: middle;*/
+    position: relative;
+}
+.searchBox #searchInput {
+    background: transparent;
+    border-radius: 50px;
+}
+.searchBox #searchInput::placeholder {
+    color: #d12d10;
+    padding-left: 10px  
+}
+.searchBox .search {
+    position: relative;
+    z-index: 6;
+}
+.searchBox input#searchInput:hover,
+/*.searchBox input#search:focus,*/
+.searchBox input#searchInput:active {
+    outline: none;
+    background: white;
 }
 
-/* ----------- library ------------ */
-
-/*.modalLib {
     /*display: none; 
     position: fixed;
     z-index: 1;

@@ -31,26 +31,24 @@
             </div>
         </div>
         <!-- user input search function -->
-        <div class="nasaSearchInput">
-            <div class="searchBox">
-                <input id="searchInput" type="search" placeholder="Search Images"></input>
-                <!-- This is the user search button -->
-                <button class="searchButton" onclick="searchNasa()"> Go!</button>
-            </div>
+        <div class="searchBox">
+            <input id="searchInput" type="search" placeholder="Search NASA photos">
+            <!-- This is the user search button -->
+            <span class="search"><a onclick="searchNasa()"><i class="fa fa-search"></i></a></span>
         </div>
+
         <!-- This is the image modal library-->
-        <div id="modalnasaLib" class="modal2">
+        <div id="nasaLib" class="modal2">
             <!-- back button for modal -->
             <div class="button" id="buttonClose"></div>
-                <!-- media from api -->
-                <div id="test" class="nasaIMAGES"></div>
-                <a href="index.html" onclick="closeLibrary()">Go Back</a>
-            </div>
+            <!-- media from api -->
+            <div id="test" class="nasa"></div>
+            <a href="index.html" onclick="closeLibrary()">Go Back</a>
         </div>
 
         <div class="backdrop"></div>
         <!--- picture of the day content */ -->
-        
+
     </main>
 
     <script src="./assets/style.js/main.js"></script>
