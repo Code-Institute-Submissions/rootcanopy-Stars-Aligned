@@ -85,8 +85,11 @@ function searchNasa() {
 }
 
 function Library(result) {
-    for (let i = 0; i < result.collection.items; i++) {
-        $("#nasaLibrary").append('<div class="responsive"><div class="library"><a target="_blank" href="' +result.collection.items[i].links[0].href + '"><img  width="600" height="400" src="' + result.collection.items[i].links[0].href + '"></a></div></div>');
-       console.log(result.collection.items);
+    $(".nasaIMAGES").empty();
+
+    for (let i = 0; i < result.collection.items.length; i++) {
+        document.getElementById("test").innerHTML += '<div class="library"><a href="' +result.collection.items[i].links[0].href + '"><img  width="600" height="400" src="' + result.collection.items[i].links[0].href + '"></a></<div></div>';
+        //$(".nasaIMAGES").append('<div class="library"><a href="' +result.collection.items[i].links[0].href + '"><img  width="600" height="400" src="' + result.collection.items[i].links[0].href + '"></a></<div></div>');
+       //console.log(result.collection.items[i].links[0].href);
     }
 };

@@ -12,29 +12,24 @@
 
 <body>
     <main>
-
         <!-- user input search function -->
         <div class="searchBox">
-            <input id="searchInput"  type="search" placeholder="Search images and videos"></input>
+            <input id="searchInput" type="search" placeholder="Search images and videos"></input>
             <!-- This is the user search button -->
             <button class="searchButton" onclick="searchNasa()"> Go!</button>
         </div>
         <!-- This is the image library-->
-        <div id="nasaLibrary" class="modal">
 
-            <div class="button" id="closeButton">
-                <div class="circle"></div>
-                <a href="#" onclick="closeModalLibrary()">Back</a>
-            </div>
-        </div>
-
+            <div id="test" class="nasaIMAGES"></div> 
+                
         <div class="backdrop"></div>
+        <!--- picture of the day content */ -->
         <button id="myBtn" class="myBtn" onclick="showData()">Photo of The Day</button>
         <!--  modal   body -->
-        <div id="myModal" class="modal">
+        <div id="myModal" class="modalApod">
 
             <div class="modal-content">
-                <!--- picture of the day content */ -->
+                
                 <h3 id="title"></h3>
                 <h4>Date:<span id="date"></span></h4>
                 <p id="copyright"></p>
@@ -45,7 +40,6 @@
 
             </div>
         </div>
-
     </main>
 
     <script src="./assets/main.js"></script>
