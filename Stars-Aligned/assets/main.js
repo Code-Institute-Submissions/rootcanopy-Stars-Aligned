@@ -65,7 +65,7 @@ window.onclick = function (event) {
 
 //this is the api request
 const searchUrl = "https://images-api.nasa.gov/";
-const query = "search?title="; //+ "q=&media_type=image"; // "&description=" + ""
+const query = "search?q="; //+ "media_type=image"; // "&description=" + ""
 
 function searchNasa() {
     let Input = document.getElementById("searchInput").value;
