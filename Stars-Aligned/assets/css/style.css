@@ -21,12 +21,20 @@ body {
 /* ----- main element ---*/
 
 main {
-    margin-top: 10px;
-    
+    margin-top: 25px;
 }
-main .background {
+main .background{
 
 }
+
+/*   search box   */
+
+.searchBox {
+    padding: 12px 10px;
+    vertical-align: middle;
+}
+
+
 /*<!------ Apod button and modal --> */
 button.myBtn {
     font-size: 1.25em;
@@ -60,7 +68,7 @@ button.btn-close:hover {
 
 .modalApod {  
     display: none; /*set to none when setup in js*/
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0,0,0,0.5);
     position: relative;
     z-index: 200;
     font-family: inherit;

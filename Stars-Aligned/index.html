@@ -6,18 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NASA-API</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/style.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 
 </head>
 
 <body>
-    <main>
+<main>
         <!-- user input search function -->
+    <div class="nasaSearchInput">
         <div class="searchBox">
-            <input id="searchInput" type="search" placeholder="Search images and videos"></input>
+            <input id="searchInput" type="search" placeholder="Search Images"></input>
             <!-- This is the user search button -->
             <button class="searchButton" onclick="searchNasa()"> Go!</button>
         </div>
+    </div>
         <!-- This is the image library-->
 
             <div id="test" class="nasaIMAGES"></div> 
@@ -40,9 +42,9 @@
 
             </div>
         </div>
-    </main>
+</main>
 
-    <script src="./assets/main.js"></script>
+    <script src="./assets/style.js/main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
 </body>

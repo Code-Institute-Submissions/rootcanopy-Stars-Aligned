@@ -51,17 +51,6 @@ window.onclick = function (event) {
     }
 };
 */
-//making the navbar responsive with js
-/*function myFunction() {
-    /*unused variable 
-    let resNav = document.getElementById("myNasaNav");
-    if (resNav.className === "nasaNav") {
-        resNav.className += " responsive";
-    } else {
-        resNav.className = "nasaNav";
-    }
-} /* https://www.w3schools.com/howto/howto_js_topnav_responsive.asp */
-
 
 //this is the api request
 const searchUrl = "https://images-api.nasa.gov/";
@@ -88,7 +77,7 @@ function Library(result) {
     $(".nasaIMAGES").empty();
 
     for (let i = 0; i < result.collection.items.length; i++) {
-        document.getElementById("test").innerHTML += '<div class="library"><a href="' +result.collection.items[i].links[0].href + '"><img  width="600" height="400" src="' + result.collection.items[i].links[0].href + '"></a></<div></div>';
+        document.getElementById("test").innerHTML += '<div class="library"><a href="' +result.collection.items[i].links[0].href + '"><img  width="600" height="600" src="' + result.collection.items[i].links[0].href + '"></a></<div></div>';
         //$(".nasaIMAGES").append('<div class="library"><a href="' +result.collection.items[i].links[0].href + '"><img  width="600" height="400" src="' + result.collection.items[i].links[0].href + '"></a></<div></div>');
        //console.log(result.collection.items[i].links[0].href);
     }
