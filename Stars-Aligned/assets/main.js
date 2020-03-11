@@ -64,29 +64,27 @@ window.onclick = function (event) {
 
 
 //this is the api request
-const searchUrl = "https://images-api.nasa.gov";
-const query = "/search?title="; //+ "q=&media_type=image"; // "&description=" + ""
-let result;
+const searchUrl = "https://images-api.nasa.gov/";
+const query = "search?title="; //+ "q=&media_type=image"; // "&description=" + ""
 
-function libraryNasa() {
+function searchNasa() {
+    //let search_library = document.getElementById("searchInput").value;
+
     var xhr = new XMLHttpRequest();
-
-    xhr.open("GET", searchUrl + query, true);
 
     xhr.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
             result = JSON.parse(this.responseText);
-
-            console.log(responseText);
+            
+        } else {
+            console.log(result);
         }  
     };
+    xhr.open("GET", searchUrl + query, true);
     xhr.send();
 }
 
 /*function searchNasa(result) {
-    //document.getElementById("searchInput").value;
-    //let object = "";
-    //response = JSON.parse(response);
     //for ( i = 0; i < 50; i++) {
     //document.getElementByClassName("circle").append('<div class="responsive"><div class="library"><a target="_blank" href="' + response.collection.items[i].links[0].href + '"><img  width="600" height="400" src="' + response.collection.items[i].links[0].href + '"></a></div></div>');
         console.log(result);
