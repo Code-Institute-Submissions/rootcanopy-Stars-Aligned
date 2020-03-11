@@ -12,7 +12,6 @@ function api_call() {
             data = JSON.parse(this.responseText);
 
             //console.log(data);
-
         }
     };
     xhr.send();
@@ -64,38 +63,31 @@ window.onclick = function (event) {
 } /* https://www.w3schools.com/howto/howto_js_topnav_responsive.asp */
 
 
-//this is the search library function
+//this is the api request
 const searchUrl = "https://images-api.nasa.gov";
-const queryString = "/search?title="; //+ "q=&media_type=image"; // "&description=" + ""
+const query = "/search?title="; //+ "q=&media_type=image"; // "&description=" + ""
+let result;
 
-function search() {
-    let searchInput = document.getElementById("searchInput").value;
-
-    /* -------- EPIC Nasa search api req------ */
+function libraryNasa() {
     var xhr = new XMLHttpRequest();
+
+    xhr.open("GET", searchUrl + query, true);
 
     xhr.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
-            displayNasa(xhr.responseText);
-            //console.log("results");
-        }
+            result = JSON.parse(this.responseText);
+
+            console.log(responseText);
+        }  
     };
-    let nasaLib = searchUrl + queryString + searchInput;
-
-    xhr.open("GET", nasaLib, true);
     xhr.send();
-};
+}
 
-function displayNasa(response) {
-    //let i;
-
-    response = JSON.parse(response);
-    //for (i = 0; i < response.length; i++) {
-
-        console.log(response.collection);
-    }
-
-//retrieve the user input 
-
-//define the path to the array of data we want - the abibilty to extract the data from the data we recieve
-//define the function > for loop, to loop through the array of content and pictures and create the html code to manip dom with the output
+/*function searchNasa(result) {
+    //document.getElementById("searchInput").value;
+    //let object = "";
+    //response = JSON.parse(response);
+    //for ( i = 0; i < 50; i++) {
+    //document.getElementByClassName("circle").append('<div class="responsive"><div class="library"><a target="_blank" href="' + response.collection.items[i].links[0].href + '"><img  width="600" height="400" src="' + response.collection.items[i].links[0].href + '"></a></div></div>');
+        console.log(result);
+}*/

@@ -6,46 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NASA-API</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
 
 </head>
 
 <body>
-    <header>
+    <main>
 
-            <!-- user input search function -->
+        <!-- user input search function -->
         <div class="searchBox">
-            <input id="searchInput" type="text" placeholder="Search images and videos"></input>
+            <input id="searchInput"  type="search" placeholder="Search images and videos"></input>
             <!-- This is the user search button -->
-            <button class="searchButton" onclick="search()">Go!</button>
+            <button class="searchButton" <!--onclick="searchNasa()"--> Go!</button>
+        </div>
+        <!-- This is the returned image library-->
+        <div id="nasaLibrary" class="modal">
+
+            <div class="button" id="closeButton">
+                <div class="circle"></div>
+                <a href="#" onclick="closeModalLibrary()">Back</a>
+            </div>
         </div>
 
         <div class="backdrop"></div>
         <button id="myBtn" class="myBtn" onclick="showData()">Photo of The Day</button>
-        <!--      modal   body -->
+        <!--  modal   body -->
         <div id="myModal" class="modal">
-            
+
             <div class="modal-content">
-                <!--- /* picture of the day content */ -->
+                <!--- picture of the day content */ -->
                 <h3 id="title"></h3>
-                <h4>Date: <span id="date"></span></h4>
+                <h4>Date:<span id="date"></span></h4>
                 <p id="copyright"></p>
                 <img id="pic" src="" alt="NASA" />
                 <p id="explanation"></p>
                 <!-- button to close modal -->
-                <button class="btn-close">&times;</button>
+                <span class="btn-close" onClick="closeBtn()">&times;</span>
 
             </div>
         </div>
-        <div id="result"></div>
-    </header>
 
-    <footer>
-        <!-- footer needed  -->
-    </footer>
+    </main>
 
     <script src="./assets/main.js"></script>
-    <!---<script src="https://d3js.org/d3.v5.min.js" SameSite="Lax"></script> -->
 
 </body>
 

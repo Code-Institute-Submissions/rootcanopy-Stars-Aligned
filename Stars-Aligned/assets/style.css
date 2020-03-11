@@ -15,7 +15,7 @@ body {
     height: 100vh;
     position: relative;
     margin: auto;
-
+    text-align: center;
     font-family: 'Space+Mono', sans-serif;
     height: 100%;
     overflow: hidden
