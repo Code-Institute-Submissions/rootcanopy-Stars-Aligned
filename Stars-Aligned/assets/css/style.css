@@ -5,6 +5,7 @@ html {
     font-family: 'Space+Mono', sans-serif;
     color: white;
     height: 100%;
+    font-size: 25px
 }
 
 body {
@@ -23,9 +24,6 @@ body {
 main {
     margin-top: 25px;
 }
-main .background{
-
-}
 
 /*   search box   */
 
@@ -36,6 +34,7 @@ main .background{
 
 
 /*<!------ Apod button and modal --> */
+
 button.myBtn {
     font-size: 1.25em;
     font-family: 'Coustard';
@@ -62,21 +61,32 @@ button.btn-close:hover {
 }
 
 #pic {
-    width: 700px;
+    width: 70%;
     height: 400px;
 }
 
-.modalApod {  
+.modalAPOD {  
     display: none; /*set to none when setup in js*/
     background-color: rgba(0,0,0,0.5);
-    position: relative;
+    position: fixed;
     z-index: 200;
+    overflow:auto;
     font-family: inherit;
     height: inherit;
-    width: 50%;
-    margin: auto;
+    width: 100%;
     padding: 30px;
-    
+    top: 0
+}
+
+.apod-content {
+    width: 90%;
+    margin: auto;
+    position: relative;
+    max-width: 1200px
+}
+
+.closePOD {
+    display: none;
 }
 
 .backdrop {
@@ -92,7 +102,7 @@ button.btn-close:hover {
 
 /* ----------- library ------------ */
 
-.modalLib {
+/*.modalLib {
     /*display: none; 
     position: fixed;
     z-index: 1;
@@ -103,31 +113,3 @@ button.btn-close:hover {
     overflow: auto;
     background-color: black;
 }*/
-
-/* ----------- Responsive @media NavBar------ */
-
-@media screen and (max-width: 1000px) {
-    .nasaNav a:not(:first-child) {
-        display: none;
-    }
-    .nasaNav a.icon {
-      float: right;
-      display: block;
-    }
-  }
-
-@media screen and (max-width: 1000px) {
-    .nasaNav .responsive {
-        position: relative;
-    }
-    .nasaNav .responsive a.icon {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    .nasaNav .responsive a {
-      float: none;
-      display: block;
-      text-align: right;
-    }
-  }

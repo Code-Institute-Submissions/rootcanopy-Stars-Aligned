@@ -31,18 +31,21 @@ api_call();
 
 
 //adding some effects                           /* To Do, All this code needs to be checked/ debugged */
-let modal = document.getElementById('myModal');
+let modal = document.getElementById('ModalA');
 let btn = document.getElementById('myBtn');
 let closebtn = document.getElementsByClassName('btn-close');
 
 btn.onclick = function () {
     modal.style.display = "block";
 };
+function closeAPOD() {
+    document.getElementById("ModalA").style.display = "none";
+}
 
-closebtn.onclick = function () {
+/*btn.onclick = function () {
     modal.style.display = "none";
-};
-/*
+};*/
+
 window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
@@ -50,7 +53,7 @@ window.onclick = function (event) {
         this.console.log('window click not working');
     }
 };
-*/
+
 
 //this is the api request
 const searchUrl = "https://images-api.nasa.gov/";
