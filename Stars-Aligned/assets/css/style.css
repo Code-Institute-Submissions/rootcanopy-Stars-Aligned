@@ -20,7 +20,13 @@ body {
 }
 
 /* ----- main element ---*/
+main .parcles-js {
+    display: block;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
 
+}
 main {
     margin-top: 25px;
 }
@@ -107,7 +113,7 @@ button.btn-close:hover {
 input {
     height: 50px;
     font-size: 20px;
-    /*vertical-align: middle;*/
+    vertical-align: middle;
     position: relative;
 }
 .searchBox #searchInput {
@@ -122,13 +128,18 @@ input {
     position: relative;
     z-index: 6;
 }
+.searchBox input#searchInput:hover{
+    transition-duration: .5s;
+}
 .searchBox input#searchInput:hover,
-/*.searchBox input#search:focus,*/
+.searchBox input#search:focus,
 .searchBox input#searchInput:active {
     outline: none;
     background: white;
 }
-
+/*.modal2 a {
+    display: none;
+}
     /*display: none; 
     position: fixed;
     z-index: 1;
