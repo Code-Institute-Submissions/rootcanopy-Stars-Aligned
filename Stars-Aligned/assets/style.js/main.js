@@ -52,7 +52,7 @@ window.onclick = function (event) {
 
 //this is the api request
 const searchUrl = "https://images-api.nasa.gov/";
-const query = "search?media_type="; //+ "image"; // "&description=" + ""
+const query = "search?media_type=image"; //+ "image"; // "&description=" + ""
 
 function searchNasa() {
     let Input = document.getElementById("searchInput").value;
@@ -63,7 +63,7 @@ function searchNasa() {
         if (this.readyState === 4 && this.status === 200) {
             //displayIMGS = (this.responseText);
             Library(JSON.parse(this.responseText));
-            console.log(Library);
+            //console.log(Library);
         } 
     };
     let URL = searchUrl + query + Input;

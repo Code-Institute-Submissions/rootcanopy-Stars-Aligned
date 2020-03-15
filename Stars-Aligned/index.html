@@ -12,11 +12,13 @@
 
 <body>
     <main>
-        
-        <div id="particles-js">
+        <div class="count-particles">
+            <span class="js-count-particles">--</span>
+        </div>
+            <div id="particles-js"></div>
 
             <div class="count-particles">
-                <span class="js-count-particles"></span> particles
+                <span class="js-count-particles">--</span>
             </div>
         <!-- photo of the day button -->
         <button id="myBtn" class="myBtn" onclick="showData()">Photo of The Day</button>
@@ -37,10 +39,10 @@
             </div>
         </div>
         <!-- user input search function -->
-        <form class="searchBox">
+        <form class="searchBox" onclick="searchNasa()">
             <input id="searchInput" type="search" placeholder="Search NASA photos">
             <!-- This is the user search button -->
-            <button class="search"><a onclick="searchNasa()"><i class="fa fa-search"></i></a></button>
+            <button type="submit"><i class="fa fa-search"></i></button>
         </form>
 
         <!-- This is the image modal library-->
@@ -54,7 +56,7 @@
 
         <div class="backdrop"></div>
         <!--- picture of the day content */ -->
-        </div>
+        
     </main>
 
     
