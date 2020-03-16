@@ -61,12 +61,12 @@ function searchNasa() {
 
     xhr.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
-            //displayIMGS = (this.responseText);
+            //console.log(this.responseText);
             Library(JSON.parse(this.responseText));
-            //console.log(Library);
+            console.log(Library);
         } 
     };
-    let URL = searchUrl + query + Input;
+    let URL = searchUrl + query + Input;//+ '&q='
     xhr.open("GET", URL, true);
     xhr.send();
 }
@@ -80,3 +80,12 @@ function Library(result) {
        //console.log(result.collection.items[i].links[0].href);
     }
 };
+
+function myFunction(event) {
+  var x = event.key;
+
+  // If the pressed keyboard button is "a" or "A" (using caps lock or shift), alert some text.
+  if (x == "Enter") { 
+    alert ('its works!'); searchNasa();
+  }
+}

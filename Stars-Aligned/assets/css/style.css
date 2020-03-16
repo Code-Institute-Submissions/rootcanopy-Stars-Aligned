@@ -11,7 +11,7 @@ html {
 }
 
 body {
-    background-image: url("https://wallpaperose.com/wp-content/uploads/2013/03/Nasa-Mars-Curiosity-Wallpaper.jpg");
+    background-color: blue; /*url("https://wallpaperose.com/wp-content/uploads/2013/03/Nasa-Mars-Curiosity-Wallpaper.jpg");*/
     background-repeat: no-repeat;
     background-size: cover;
     width: 100vw;
