@@ -43,7 +43,7 @@ function closeAPOD() {
 /*btn.onclick = function () {
     modal.style.display = "none";
 };
-*/
+*/ //Click outside of window for modal APOD to close
 window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
@@ -52,8 +52,9 @@ window.onclick = function (event) {
 
 //this is the api request
 const searchUrl = "https://images-api.nasa.gov/";
-const query = "search?media_type=image"; //+ "image"; // "&description=" + ""
+const query = "search?title=image"; //+ "image"; // "&description=" + ""
 
+// @ts-check
 function searchNasa() {
     let Input = document.getElementById("searchInput").value;
     
@@ -63,17 +64,17 @@ function searchNasa() {
         if (this.readyState === 4 && this.status === 200) {
             //console.log(this.responseText);
             Library(JSON.parse(this.responseText));
-            console.log(Library);
+            //console.log(Library);
         } 
     };
     let URL = searchUrl + query + Input;//+ '&q='
     xhr.open("GET", URL, true);
     xhr.send();
 }
-
+// @ts-check
 function Library(result) {
     $(".nasaImg").empty();
-    console.log(result);
+
     for (let i = 0; i < result.collection.items.length; i++) {
         document.getElementById("test").innerHTML += '<div class="library"><a href="' +result.collection.items[i].links[0].href + '"><img  width="600" height="600" src="' + result.collection.items[i].links[0].href + '"></a></<div></div>';
         //$(".nasaIMAGES").append('<div class="library"><a href="' +result.collection.items[i].links[0].href + '"><img  width="600" height="400" src="' + result.collection.items[i].links[0].href + '"></a></<div></div>');

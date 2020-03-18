@@ -6,7 +6,6 @@ html {
     color: white;
     height: auto;
     text-align: center;
-    display:block
     
 }
 
@@ -107,7 +106,7 @@ form .searchBox{
 button.myBtn {
     font-size: 1.25em;
     font-family: 'Coustard';
-    background: transparent;
+    background: rgba(0,0,0,1);
     color: white;
     border: 2px solid;
     border-radius: 1em;
@@ -180,13 +179,16 @@ button.btn-close:hover {
 input {
     height: 50px;
     font-size: 20px;
-    vertical-align: middle;
     position: relative;
+    left: 10px:
 }
 
 .searchBox #searchInput {
-    background: transparent;
+    background: rgba(0,0,0,1);
     border-radius: 50px;
+}
+.searchBox #searchInput:active {
+    
 }
 
 .searchBox #searchInput::placeholder {
