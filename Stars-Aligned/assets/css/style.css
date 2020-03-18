@@ -39,6 +39,7 @@ canvas {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    z-index: -10
 }
 
 /* ---- stats.js ---- */
@@ -83,7 +84,6 @@ main .parcles-js {
     position: absolute;
     width: 100vw;
     height: 100vh;
-
 }
 
 main {
@@ -188,7 +188,7 @@ input {
     border-radius: 50px;
 }
 .searchBox #searchInput:active {
-    
+
 }
 
 .searchBox #searchInput::placeholder {

@@ -62,7 +62,7 @@ function searchNasa() {
 
     xhr.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
-            console.log(this.responseText);
+            //console.log(this.responseText);
             //console.log(result);
             Library(JSON.parse(this.responseText));
             
@@ -79,7 +79,7 @@ function Library(result) {
     for (let i = 0; i < result.collection.items.length; i++) {
         document.getElementById("test").innerHTML += '<div class="library"><a href="' +result.collection.items[i].links[0].href + '"><img  width="600" height="600" src="' + result.collection.items[i].links[0].href + '"></a></<div></div>';
         //$(".nasaIMAGES").append('<div class="library"><a href="' +result.collection.items[i].links[0].href + '"><img  width="600" height="400" src="' + result.collection.items[i].links[0].href + '"></a></<div></div>');
-       console.log(result.collection.items[i].links[0].href);
+       //console.log(result.collection.items[i].links[0].href);
     }
 };
 
