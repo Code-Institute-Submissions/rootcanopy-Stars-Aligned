@@ -52,19 +52,20 @@ window.onclick = function (event) {
 
 //this is the api request
 const searchUrl = "https://images-api.nasa.gov/";
-const query = "search?title=image"; //+ "image"; // "&description=" + ""
+const query = "search?title="; //+ "image"; // "&description=" + ""
 
 // @ts-check
 function searchNasa() {
     let Input = document.getElementById("searchInput").value;
-    
+    console.log("searchInput");
     let xhr = new XMLHttpRequest();
 
     xhr.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
-            //console.log(this.responseText);
+            console.log(this.responseText);
+            //console.log(result);
             Library(JSON.parse(this.responseText));
-            //console.log(Library);
+            
         } 
     };
     let URL = searchUrl + query + Input;//+ '&q='
@@ -78,7 +79,7 @@ function Library(result) {
     for (let i = 0; i < result.collection.items.length; i++) {
         document.getElementById("test").innerHTML += '<div class="library"><a href="' +result.collection.items[i].links[0].href + '"><img  width="600" height="600" src="' + result.collection.items[i].links[0].href + '"></a></<div></div>';
         //$(".nasaIMAGES").append('<div class="library"><a href="' +result.collection.items[i].links[0].href + '"><img  width="600" height="400" src="' + result.collection.items[i].links[0].href + '"></a></<div></div>');
-       //console.log(result.collection.items[i].links[0].href);
+       console.log(result.collection.items[i].links[0].href);
     }
 };
 
@@ -90,3 +91,17 @@ function Library(result) {
     alert ('its works!'); searchNasa();
   }
 }*/
+
+// Get the input field
+var input = document.getElementById("searchInput");
+
+// Execute a function when the user releases a key on the keyboard
+input.addEventListener("keyup", function(event) {
+  // Number 13 is the "Enter" key on the keyboard
+  if (event.keyCode === 13) {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    searchNasa();
+  }
+});
