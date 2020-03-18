@@ -36,6 +36,7 @@ let closebtn = document.getElementsByClassName('btn-close');
 btn.onclick = function () {
     modal.style.display = "block";
 };
+
 function closeAPOD() {
     document.getElementById("ModalA").style.display = "none";
 }
@@ -57,7 +58,6 @@ const query = "search?title="; //+ "image"; // "&description=" + ""
 // @ts-check
 function searchNasa() {
     let Input = document.getElementById("searchInput").value;
-    console.log("searchInput");
     let xhr = new XMLHttpRequest();
 
     xhr.onreadystatechange = function () {
@@ -65,10 +65,10 @@ function searchNasa() {
             //console.log(this.responseText);
             //console.log(result);
             Library(JSON.parse(this.responseText));
-            
-        } 
+
+        }
     };
-    let URL = searchUrl + query + Input;//+ '&q='
+    let URL = searchUrl + query + Input; //+ '&q='
     xhr.open("GET", URL, true);
     xhr.send();
 }
@@ -77,31 +77,20 @@ function Library(result) {
     $(".nasaImg").empty();
 
     for (let i = 0; i < result.collection.items.length; i++) {
-        document.getElementById("test").innerHTML += '<div class="library"><a href="' +result.collection.items[i].links[0].href + '"><img  width="600" height="600" src="' + result.collection.items[i].links[0].href + '"></a></<div></div>';
-        //$(".nasaIMAGES").append('<div class="library"><a href="' +result.collection.items[i].links[0].href + '"><img  width="600" height="400" src="' + result.collection.items[i].links[0].href + '"></a></<div></div>');
-       //console.log(result.collection.items[i].links[0].href);
+        document.getElementById("test").innerHTML += '<div class="library"><a href="' + result.collection.items[i].links[0].href + '"><img  width="600" height="600" src="' + result.collection.items[i].links[0].href + '"></a></<div></div>';
     }
 };
-
-/*function myFunction(event) {
-  var x = event.key;
-
-  // If the pressed keyboard button is "a" or "A" (using caps lock or shift), alert some text.
-  if (x == "Enter") { 
-    alert ('its works!'); searchNasa();
-  }
-}*/
 
 // Get the input field
 var input = document.getElementById("searchInput");
 
 // Execute a function when the user releases a key on the keyboard
-input.addEventListener("keyup", function(event) {
-  // Number 13 is the "Enter" key on the keyboard
-  if (event.keyCode === 13) {
-    // Cancel the default action, if needed
-    event.preventDefault();
-    // Trigger the button element with a click
-    searchNasa();
-  }
+input.addEventListener("keyup", function (event) {
+    // Number 13 is the "Enter" key on the keyboard
+    if (event.keyCode === 13) {
+        // Cancel the default action, if needed
+        event.preventDefault();
+        // Trigger the button element with a click
+        searchNasa();
+    }
 });
