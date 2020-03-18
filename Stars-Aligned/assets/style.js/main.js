@@ -22,7 +22,7 @@ function showData() {
     document.getElementById("date").innerHTML = data.date;
     document.getElementById("pic").src = data.hdurl;
     document.getElementById("explanation").innerHTML = data.explanation;
-    document.getElementById("copyright").innerhtml = data.copyright;
+    document.getElementById("copyright").innerHTML = data.copyright;
 }
 
 document.getElementById("myBtn").addEventListener("click", showData);
@@ -73,7 +73,7 @@ function searchNasa() {
 
 function Library(result) {
     $(".nasaImg").empty();
-
+    console.log(result);
     for (let i = 0; i < result.collection.items.length; i++) {
         document.getElementById("test").innerHTML += '<div class="library"><a href="' +result.collection.items[i].links[0].href + '"><img  width="600" height="600" src="' + result.collection.items[i].links[0].href + '"></a></<div></div>';
         //$(".nasaIMAGES").append('<div class="library"><a href="' +result.collection.items[i].links[0].href + '"><img  width="600" height="400" src="' + result.collection.items[i].links[0].href + '"></a></<div></div>');
@@ -81,11 +81,11 @@ function Library(result) {
     }
 };
 
-function myFunction(event) {
+/*function myFunction(event) {
   var x = event.key;
 
   // If the pressed keyboard button is "a" or "A" (using caps lock or shift), alert some text.
   if (x == "Enter") { 
     alert ('its works!'); searchNasa();
   }
-}
+}*/

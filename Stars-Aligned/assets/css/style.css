@@ -4,32 +4,34 @@
 html {
     font-family: 'Space+Mono', sans-serif;
     color: white;
-    height: 100%;
-    font-size: 25px;
-    overflow: hidden;
-    text-align: center
+    height: auto;
+    text-align: center;
+    display:block
+    
 }
 
 body {
-    background-color: blue; /*url("https://wallpaperose.com/wp-content/uploads/2013/03/Nasa-Mars-Curiosity-Wallpaper.jpg");*/
+    background-color: black;
+    /*url("https://wallpaperose.com/wp-content/uploads/2013/03/Nasa-Mars-Curiosity-Wallpaper.jpg");*/
     background-repeat: no-repeat;
     background-size: cover;
     width: 100vw;
     position: relative;
     margin: 0;
     font-family: 'Space+Mono', sans-serif;
+    font-size: 25px;
 }
 
 /* ----- Particles */
-  
-  canvas {
+
+canvas {
     display: block;
     /*vertical-align: bottom;*/
-  }
-  
-  /* ---- particles.js container ---- */
-  
-  #particles-js {
+}
+
+/* ---- particles.js container ---- */
+
+#particles-js {
     position: absolute;
     width: 100vw;
     height: 100vh;
@@ -38,11 +40,11 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-  }
-  
-  /* ---- stats.js ---- */
-  
-  .count-particles{
+}
+
+/* ---- stats.js ---- */
+
+.count-particles {
     /*background: #000022;*/
     position: absolute;
     top: 48px;
@@ -56,25 +58,25 @@ body {
     padding-bottom: 2px;
     font-family: Helvetica, Arial, sans-serif;
     font-weight: bold;
-  }
-  
-  .js-count-particles{
+}
+
+.js-count-particles {
     font-size: 1.1em;
-  }
-  
-  #stats,
-  .count-particles{
+}
+
+#stats,
+.count-particles {
     -webkit-user-select: none;
-  }
-  
-  #stats{
+}
+
+#stats {
     border-radius: 3px 3px 0 0;
     overflow: hidden;
-  }
-  
-  .count-particles{
+}
+
+.count-particles {
     border-radius: 0 0 3px 3px;
-  }
+}
 
 /* ----- main element ---*/
 main .parcles-js {
@@ -84,17 +86,21 @@ main .parcles-js {
     height: 100vh;
 
 }
+
 main {
     margin-top: 25px;
+    position: relative
 }
 
 /*   search box   */
 
-.searchBox {
-    padding: 12px 10px;
-    vertical-align: middle;
+form .searchBox{
+    position: relative
 }
 
+.searchBox {
+    padding: 12px 10px;
+}
 
 /*------ Apod button ----- */
 
@@ -106,40 +112,44 @@ button.myBtn {
     border: 2px solid;
     border-radius: 1em;
     cursor: pointer;
-    position:relative;
+    position: relative;
     transition: .5s ease;
     top: 20%;
-    left:20px;
+
 }
+
 button:hover,
-button:active {    /* active not working */
+button:active {
+    /* active not working */
     border-color: #fa923f;
     color: #fa923f;
 }
+
 button.btn-close:hover {
     color: red;
 }
+
 .btn-close {
     text-align: center;
 }
 
 #pic {
-    width: 70%;
+    width: 90%;
     height: 400px;
 }
 
 /* ---- APODmodal ---- */
 
-.modalAPOD {  
-    display: none; /*set to none when setup in js*/
-    background-color: rgba(0,0,0,1.5);
+.modalAPOD {
+    display: none;
+    /*set to none when setup in js*/
+    background-color: rgba(0, 0, 0, 1.5);
     position: fixed;
     z-index: 200;
-    overflow:auto;
+    overflow: auto;
     font-family: inherit;
     height: inherit;
     width: 100%;
-    padding: 30px;
     top: 0
 }
 
@@ -173,27 +183,33 @@ input {
     vertical-align: middle;
     position: relative;
 }
+
 .searchBox #searchInput {
     background: transparent;
     border-radius: 50px;
 }
+
 .searchBox #searchInput::placeholder {
     color: #d12d10;
-    padding-left: 10px  
+    padding-left: 10px
 }
+
 .searchBox .search {
     position: relative;
     z-index: 6;
 }
-.searchBox input#searchInput:hover{
+
+.searchBox input#searchInput:hover {
     transition-duration: .5s;
 }
+
 .searchBox input#searchInput:hover,
 .searchBox input#search:focus,
 .searchBox input#searchInput:active {
     outline: none;
     background: white;
 }
+
 /*.modal2 a {
     display: none;
 }

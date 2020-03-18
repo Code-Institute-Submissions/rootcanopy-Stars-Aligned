@@ -12,13 +12,13 @@
 
 <body>
     <main>
-        <div class="count-particles">
+        <!--<div class="count-particles">
             <span class="js-count-particles">--</span>
-        </div>
+        </div>-->
             <div id="particles-js"></div>
 
             <div class="count-particles">
-                <span class="js-count-particles">--</span>
+                <span class="js-count-particles"></span>
             </div>
         <!-- photo of the day button -->
         <button id="myBtn" class="myBtn" onclick="showData()">Photo of The Day</button>
@@ -40,9 +40,8 @@
         </div>
         <!-- user input search function -->
         <form class="searchBox">
-            <input id="searchInput" onkeydown="myFunction(event)" type="search" placeholder="Search NASA photos">
+            <input id="searchInput" type="search" placeholder="Search NASA photos" onsearch="searchNasa()"><i class="fa fa-search"></i></input>
             <!-- This is the user search button -->
-            <button onclick="console.log('hello')"><i class="fa fa-search"></i></button>
         </form>
 
         <!-- This is the image modal library-->
@@ -58,11 +57,9 @@
         <!--- picture of the day content */ -->
         
     </main>
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> -->
-    
     <script src="./assets/style.js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> 
     <script src="./assets/style.js/background.js"></script>
 </body>
 
