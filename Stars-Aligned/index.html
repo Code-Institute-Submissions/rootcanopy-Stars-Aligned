@@ -36,20 +36,22 @@
         <!-- user input search function -->
         <div class="search">
             <div class="searchBox">
-                <input id="searchInput" type="input" placeholder="Search NASA photos"></input>
+                <input id="searchInput" type="input" placeholder="Search NASA .."></input>
                 <!-- This is the user search button -->
-                <span class="clicker"><a onclick="searchNasa()"><i class="fa fa-search"></i></a></span>
+                <span class="clickerClose"><a onclick="searchNasa()"><i class="fa fa-search"></i></a></span>
             </div>
         </div>
         <!-- This is the image modal library-->
-        <div id="nasaLib" class="modal">
-            <!-- back button for modal -->
-            <!--<div class="button" id="buttonClose"></div>-->
-            <!-- media from api -->
-            <div id="test" class="nasaImg"></div>
-            <a href="#" onclick="closeLibrary()">Go Back</a>
+        <div class="container">
+            <div id="nasaLib" class="modal">
+                <!-- back button for modal -->
+                <div class="button" id="buttonClose"></div>
+                <!-- media from api -->
+                <div id="test" class="nasaImg"></div>
+                <a href="#" onclick="closeLibrary()">Go Back</a>
+            </div>
         </div>
-
+        
     </main>
     <script src="./assets/style.js/main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

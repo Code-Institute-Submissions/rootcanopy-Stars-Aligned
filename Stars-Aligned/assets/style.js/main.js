@@ -56,16 +56,19 @@ const query = "search?title="; //+ "image"; // "&description=" + ""
 // @ts-check
 function searchNasa() {
     let Input = document.getElementById("searchInput").value;
-    let xhr = new XMLHttpRequest();
 
+    let xhr = new XMLHttpRequest();
+    let URL = searchUrl + query + Input;
+
+    xhr.open("GET", URL, true);
     xhr.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
             Library(JSON.parse(this.responseText));
 
         }
     };
-    let URL = searchUrl + query + Input; //+ '&q='
-    xhr.open("GET", URL, true);
+
+    document.getElementById("nasaLib").style.display = "block";
     xhr.send();
 }
 // @ts-check
@@ -73,8 +76,8 @@ function Library(result) {
     $(".nasaImg").empty();
 
     for (let i = 0; i < result.collection.items.length; i++) {
-        document.getElementById("test").innerHTML += '<div class="library"><a target="_blank" href="' 
-        + result.collection.items[i].links[0].href + '"><img  width="600" height="600" src="' 
+        document.getElementById("test").innerHTML += '<div class="nasaLibrary"><div class="images"><a target="_blank" href="' 
+        + result.collection.items[i].links[0].href + '"><img class="item" width="600" height="600" src="' 
         + result.collection.items[i].links[0].href + '"></a></<div></div>';
     } // 
 };
@@ -92,3 +95,8 @@ input.addEventListener("keyup", function (event) {
         searchNasa();
     }
 });
+
+// library modal events
+function closeLibrary() {
+    document.getElementById("nasaLib").style.display = "none";
+}
