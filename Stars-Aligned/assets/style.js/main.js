@@ -1,17 +1,16 @@
 const apodURL = "https://api.nasa.gov/planetary/apod?api_key=";
 const api_key = "aTzWAFGW6diC9Gmiv2motIrgf68tuKJyXiXxQ8IL";
-let data;
+let data; 
 
 function api_call() {
     var xhr = new XMLHttpRequest();
-
+    
     xhr.open("GET", apodURL + api_key, true);
 
     xhr.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
             data = JSON.parse(this.responseText);
-
-            //console.log(data);
+            //data here and above => let declares a global variable 
         }
     };
     xhr.send();
@@ -22,16 +21,15 @@ function showData() {
     document.getElementById("date").innerHTML = data.date;
     document.getElementById("pic").src = data.hdurl;
     document.getElementById("explanation").innerHTML = data.explanation;
-    document.getElementById("copyright").innerHTML = data.copyright;
 }
 
 document.getElementById("myBtn").addEventListener("click", showData);
-api_call();
+api_call(); 
 
 //adding some effects                           /* To Do, All this code needs to be checked/ debugged */
 let modal = document.getElementById('ModalA');
 let btn = document.getElementById('myBtn');
-let closebtn = document.getElementsByClassName('btn-close');
+let closebtn = document.getElementsByClassName('btn-close-apod');
 
 btn.onclick = function () {
     modal.style.display = "block";
@@ -43,15 +41,15 @@ function closeAPOD() {
 
 /*btn.onclick = function () {
     modal.style.display = "none";
-};
-*/ //Click outside of window for modal APOD to close
+};*/
+//Click outside of window for modal APOD to close
 window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
 };
 
-//this is the api request
+//this is the api request for nasa library
 const searchUrl = "https://images-api.nasa.gov/";
 const query = "search?title="; //+ "image"; // "&description=" + ""
 
@@ -62,8 +60,6 @@ function searchNasa() {
 
     xhr.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
-            //console.log(this.responseText);
-            //console.log(result);
             Library(JSON.parse(this.responseText));
 
         }
@@ -77,8 +73,10 @@ function Library(result) {
     $(".nasaImg").empty();
 
     for (let i = 0; i < result.collection.items.length; i++) {
-        document.getElementById("test").innerHTML += '<div class="library"><a href="' + result.collection.items[i].links[0].href + '"><img  width="600" height="600" src="' + result.collection.items[i].links[0].href + '"></a></<div></div>';
-    }
+        document.getElementById("test").innerHTML += '<div class="library"><a target="_blank" href="' 
+        + result.collection.items[i].links[0].href + '"><img  width="600" height="600" src="' 
+        + result.collection.items[i].links[0].href + '"></a></<div></div>';
+    } // 
 };
 
 // Get the input field

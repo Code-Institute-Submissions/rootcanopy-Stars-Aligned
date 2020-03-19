@@ -5,20 +5,19 @@ html {
     font-family: 'Space+Mono', sans-serif;
     color: white;
     height: auto;
-    text-align: center;
-    
+    overflow: hidden
 }
 
 body {
-    background-color: black;
-    /*url("https://wallpaperose.com/wp-content/uploads/2013/03/Nasa-Mars-Curiosity-Wallpaper.jpg");*/
-    background-repeat: no-repeat;
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
     background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
     width: 100vw;
-    position: relative;
-    margin: 0;
     font-family: 'Space+Mono', sans-serif;
     font-size: 25px;
+
+    text-align: center
 }
 
 /* ----- Particles */
@@ -35,7 +34,7 @@ canvas {
     width: 100vw;
     height: 100vh;
     background-color: transparent;
-    background-image: url("");
+    /*background-image: url("");*/
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -44,8 +43,8 @@ canvas {
 
 /* ---- stats.js ---- */
 
-.count-particles {
-    /*background: #000022;*/
+/*.count-particles {
+    background: #000022;
     position: absolute;
     top: 48px;
     left: 0;
@@ -59,46 +58,25 @@ canvas {
     font-family: Helvetica, Arial, sans-serif;
     font-weight: bold;
 }
-
+*/
 .js-count-particles {
     font-size: 1.1em;
 }
 
-#stats,
-.count-particles {
-    -webkit-user-select: none;
-}
-
-#stats {
-    border-radius: 3px 3px 0 0;
-    overflow: hidden;
-}
-
-.count-particles {
-    border-radius: 0 0 3px 3px;
-}
-
 /* ----- main element ---*/
-main .parcles-js {
+.parcles-js {
     display: block;
     position: absolute;
     width: 100vw;
     height: 100vh;
 }
 
-main {
-    margin-top: 25px;
-    position: relative
-}
-
 /*   search box   */
 
-form .searchBox{
-    position: relative
-}
-
-.searchBox {
-    padding: 12px 10px;
+ .searchBox{
+    position: relative;
+    text-align: center;
+    margin: 2em
 }
 
 /*------ Apod button ----- */
@@ -106,7 +84,7 @@ form .searchBox{
 button.myBtn {
     font-size: 1.25em;
     font-family: 'Coustard';
-    background: rgba(0,0,0,1);
+    background: rgba(0,0,0,0.7);
     color: white;
     border: 2px solid;
     border-radius: 1em;
@@ -114,7 +92,8 @@ button.myBtn {
     position: relative;
     transition: .5s ease;
     top: 20%;
-
+    margin: 1em;
+    text-align: center;
 }
 
 button:hover,
@@ -129,7 +108,7 @@ button.btn-close:hover {
 }
 
 .btn-close {
-    text-align: center;
+    float: right;
 }
 
 #pic {
@@ -139,17 +118,18 @@ button.btn-close:hover {
 
 /* ---- APODmodal ---- */
 
-.modalAPOD {
+.modal {
     display: none;
     /*set to none when setup in js*/
     background-color: rgba(0, 0, 0, 1.5);
-    position: fixed;
+    position: absolute;
     z-index: 200;
     overflow: auto;
     font-family: inherit;
-    height: inherit;
+    height: auto;
     width: 100%;
-    top: 0
+    top:0;
+    text-align: center
 }
 
 .apod-content {
@@ -160,7 +140,8 @@ button.btn-close:hover {
 }
 
 .closePOD {
-    display: none;
+    color: white;
+    position: relative
 }
 
 /*.backdrop {
@@ -188,7 +169,7 @@ input {
     border-radius: 50px;
 }
 .searchBox #searchInput:active {
-
+    color: ;
 }
 
 .searchBox #searchInput::placeholder {
@@ -210,6 +191,9 @@ input {
 .searchBox input#searchInput:active {
     outline: none;
     background: white;
+}
+.searchBox a:hover {
+    cursor: pointer;
 }
 
 /*.modal2 a {
