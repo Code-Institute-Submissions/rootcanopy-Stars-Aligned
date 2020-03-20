@@ -1,7 +1,7 @@
 // API CALL FOR PIC OF DAY
 const apodURL = "https://api.nasa.gov/planetary/apod?api_key=";
 const api_key = "aTzWAFGW6diC9Gmiv2motIrgf68tuKJyXiXxQ8IL";
-let data;
+var data;
 
 function api_call() {
     var xhr = new XMLHttpRequest();
@@ -17,16 +17,31 @@ function api_call() {
     xhr.send();
 }
 // TODO
-function showData() { 
+function showData(data) { 
     document.getElementById("title").innerHTML = data.title;
     document.getElementById("date").innerHTML = data.date;
     document.getElementById("pic").src = data.hdurl;
     document.getElementById("explanation").innerHTML = data.explanation;
 }
+// BUTTON ON CLICK OPENS APOD
 
-document.getElementById("myBtn").addEventListener("click", showData);
-api_call();
+//TODO
+function showData() {
+    document.getElementById("modalA").style.display="block";
 
+    document.getElementById("myBtn").addEventListener("click", showData);
+    api_call();
+}
+// THIS CLOSES THE APOD MODAL
+function closeBtn() {
+    document.getElementsByClassName("modal").style.display ="none";
+}
+// THIS ENSURES THE USER CAN CLICK ANYWHERE TO ESCAPE
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+};
 
 // THIS IS THE SEARCH LIBRARY REQUEST
 const searchUrl = "https://images-api.nasa.gov/";
@@ -55,13 +70,9 @@ function searchNasa() {
 function Library(result) {
     //console.log(result.collection.items);
     for (let i = 0; i < result.collection.items.length; i++) {
-        document.getElementById("nasaImg").innerHTML += '<div class="response"><div class="images"><div class="descrip"><a target="_blank" href="' 
-        + result.collection.items[i].links[0].href + '"><img class="item" width="600" height="600" src="' 
+        document.getElementById("nasaImg").innerHTML += '<div class="response"><div class="images"><a target="_blank" alt="Nava earth images" href="' 
+        + result.collection.items[i].links[0].href + '"><div id="description" onmouseover="showInfo()" onmouseout="hideIt()"> ' + result.collection.items[i].data[0].description + '</div><img class="item" width="400" height="400" src="' 
         + result.collection.items[i].links[0].href + '"></a></<div></div></div>';
-    }
-    for (let i = 0; i < result.collection.items.length; i++) {
-        document.getElementById("nasaImg").innerHTML += '<div class="descript" display="none" mouseover="showInfo()"></div>'
-        + result.collection.items[i].data[0].description;
     }
 };
 
@@ -77,29 +88,19 @@ input.addEventListener("keyup", function (event) {
         searchNasa();
     }
 });
-//to display the decription tags on images
-document.getElementById("nasaImg").addEventListener("mouseover", showInfo);
-document.getElementById("nasaImg").addEventListener("mouseout", noInfo);
-
+//to display the decription tags on images 
 function showInfo() {
-    document.getElementsByClassName("descript").style.display="block";
+    document.getElementById("description").style.display="block";
 }
 function noInfo() {
-    document.getElementsByClass("descript").style.display="none";
+    document.getElementById("description").style.display="none";
 }
 
 //CLOSE FUNCTION FOR SEARCH LIBRARY
 function closeLibrary() {
     document.getElementById("nasaLib").style.display = "none";
 }
-/////////////////////////////////////////TODO
-const modal = document.getElementById("modalA");
-const btn = document.getElementById('myBtn');
 
-// library modal events
-function closeBtn() {
-    document.getElementById("modalA").style.display = "none";
-}
 
 window.onclick = function (event) {
     if (event.target == modal) {
