@@ -1,11 +1,11 @@
-// api call for pic of day 
+// API CALL FOR PIC OF DAY
 const apodURL = "https://api.nasa.gov/planetary/apod?api_key=";
 const api_key = "aTzWAFGW6diC9Gmiv2motIrgf68tuKJyXiXxQ8IL";
-let data; 
+let data;
 
 function api_call() {
     var xhr = new XMLHttpRequest();
-    
+
     xhr.open("GET", apodURL + api_key, true);
 
     xhr.onreadystatechange = function () {
@@ -27,7 +27,8 @@ function showData() {
 document.getElementById("myBtn").addEventListener("click", showData);
 api_call();
 
-//this is the api request for nasa library
+
+// THIS IS THE SEARCH LIBRARY REQUEST
 const searchUrl = "https://images-api.nasa.gov/";
 const query = "search?title="; //+ "image"; // "&description=" + ""
 
@@ -43,7 +44,7 @@ function searchNasa() {
     xhr.onreadystatechange = function () {
 
         if (this.readyState === 4 && this.status === 200) {
-            Library(JSON.parse(this.responseText));
+            Library(JSON.parse(this.responseText)); 
         }
     };
     document.getElementById("nasaLib").style.display = "block";
@@ -52,18 +53,21 @@ function searchNasa() {
 // sending search results to the DOM
 // @ts-check
 function Library(result) {
-
+    //console.log(result.collection.items);
     for (let i = 0; i < result.collection.items.length; i++) {
-        document.getElementById("nasaImg").innerHTML += '<div class="response"><div class="images"><a target="_blank" href="' 
+        document.getElementById("nasaImg").innerHTML += '<div class="response"><div class="images"><div class="descrip"><a target="_blank" href="' 
         + result.collection.items[i].links[0].href + '"><img class="item" width="600" height="600" src="' 
-        + result.collection.items[i].links[0].href + '"></a></<div></div>';
+        + result.collection.items[i].links[0].href + '"></a></<div></div></div>';
+    }
+    for (let i = 0; i < result.collection.items.length; i++) {
+        document.getElementById("nasaImg").innerHTML += '<div class="descrip" display="none" onmouseover="showInfo()"></div>'
+        + result.collection.items[i].data[0].description;
     }
 };
 
 // Get the input field
 var input = document.getElementById("searchInput");
-
-// Execute a function when the user releases a key on the keyboard
+// Execute a search when user presses enter on keyboard
 input.addEventListener("keyup", function (event) {
     // Number 13 is the "Enter" key on the keyboard
     if (event.keyCode === 13) {
@@ -74,11 +78,12 @@ input.addEventListener("keyup", function (event) {
     }
 });
 
+// TODO
 function closeLibrary() {
     document.getElementById("nasaLib").style.display = "none";
 }
 /////////////////////////////////////////
-const modal = document.getElementsByClassName("modal");
+const modal = document.getElementById("modalA");
 const btn = document.getElementById('myBtn');
 
 // library modal events
@@ -86,15 +91,16 @@ function closeBtn() {
     document.getElementById("close-apod").style.display = "none";
 }
 
-
-
 window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
 };
 
-/*btn.onclick = function closeBtn() {
+
+
+/*
+btn.onclick = function closeBtn() {
     if (event.target == modal) {
         modal.style.display = "none";
     }
@@ -104,7 +110,4 @@ window.onclick = function (event) {
 btn.onclick = function () {
     modal.style.display = "block";
 };
-
-
-//Click outside of window for modal APOD to close
 */

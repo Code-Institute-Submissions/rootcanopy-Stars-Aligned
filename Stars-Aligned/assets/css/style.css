@@ -161,6 +161,12 @@ input {
 
 /* ----- image library ---- */
 
+.descrip {
+    display: none;
+    font-family: 'Space+Mono', sans-serif;
+    
+}
+
 .response {
     line-height: 4;
     display: inline-flex;
@@ -171,6 +177,7 @@ input {
     width: 100%;
     height: auto;
 }
+
 .images .item {
     border: 1px solid #fa923f;
 }
@@ -179,10 +186,6 @@ div.item:hover {
     border: 1px solid white
 }
 
-/*.column {
-    float: ;
-    width: 25%;
-}
 
 /* ----- back button --- */
 button.imgButton {
@@ -221,36 +224,39 @@ a.imgButton:focus {
 
 @media (max-width: 1200px) {
     .item {
-    -moz-column-count:    3;
-    -webkit-column-count: 3;
-    column-count:         3;
+        -moz-column-count: 3;
+        -webkit-column-count: 3;
+        column-count: 3;
     }
-  }
-  @media (max-width: 1000px) {
-    .item {
-    -moz-column-count:    2;
-    -webkit-column-count: 2;
-    column-count:         2;
-    }
-  }
-  @media (max-width: 800px) {
-    .item {
-    -moz-column-count:    2;
-    -webkit-column-count: 2;
-    column-count:         2;
-    }
-  }
-  @media (max-width: 400px) {
-    .item {
-    -moz-column-count:    1;
-    -webkit-column-count: 1;
-    column-count:         1;
-    }
-  }
+}
 
-  /* stars background */
+@media (max-width: 1000px) {
+    .item {
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+        column-count: 2;
+    }
+}
 
-  .galaxy-header {
+@media (max-width: 800px) {
+    .item {
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+        column-count: 2;
+    }
+}
+
+@media (max-width: 400px) {
+    .item {
+        -moz-column-count: 1;
+        -webkit-column-count: 1;
+        column-count: 1;
+    }
+}
+
+/* stars background */
+
+.galaxy-header {
     overflow: hidden;
     position: absolute;
     width: 100%;
@@ -316,6 +322,7 @@ a.imgButton:focus {
         -webkit-transform: translateZ(0px);
         transform: translateZ(0px);
     }
+
     to {
         -webkit-transform: translateZ(300px);
         transform: translateZ(300px);
@@ -327,6 +334,7 @@ a.imgButton:focus {
         -webkit-transform: translateZ(0px);
         transform: translateZ(0px);
     }
+
     to {
         -webkit-transform: translateZ(300px);
         transform: translateZ(300px);
@@ -337,6 +345,7 @@ a.imgButton:focus {
     from {
         opacity: .5;
     }
+
     to {
         opacity: 1;
     }
@@ -346,30 +355,28 @@ a.imgButton:focus {
     from {
         opacity: .5;
     }
+
     to {
         opacity: 1;
     }
 }
+
 @-webkit-keyframes hideme2 {
     from {
         opacity: 0;
     }
-    to {
-        opacity: .5;
-    }
-}
-@keyframes hideme2 {
-    from {
-        opacity: 0;
-    }
+
     to {
         opacity: .5;
     }
 }
 
-section, header {
-    position: relative;
-    overflow: hidden;
-background: #000;
-    height: 100%;
+@keyframes hideme2 {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: .5;
+    }
 }

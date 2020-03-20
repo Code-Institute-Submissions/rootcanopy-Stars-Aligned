@@ -38,9 +38,8 @@
             <div class="search">
                 <input id="searchInput" type="text" placeholder="Search images ..">
                 <!-- This is the user search button -->
-                <span class="clickerClose"><a>
-                    <i onclick="searchNasa()" 
-                    class="fa fa-search"></i></a>
+                <span class="clickerClose">
+                   <a><i onclick="searchNasa()" class="fa fa-search"></i></a>  
                 </span>
             </div>
         <!-- This is the image modal library-->
@@ -51,22 +50,21 @@
                     <a href="#" onclick="closeLibrary()">Go Back</a>
                 </button>
                 <!-- media from api -->
-                <div id="nasaImg" class="nasaImg"></div>
+                <div id="nasaImg" id="descrip" class="nasaImg"></div>
                 
             </div>
         </div>
 
     </main>
+
     <script src="./assets/style.js/main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="./assets/style.js/background.js"></script>
+
 </body>
 
 </html>
 
 <!-- 
-TODO new background
 TODO responsiveness
 TODO description on hover - gallery
 TODO mars weather api
