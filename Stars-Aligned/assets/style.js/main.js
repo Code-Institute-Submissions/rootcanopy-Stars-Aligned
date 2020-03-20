@@ -60,7 +60,7 @@ function Library(result) {
         + result.collection.items[i].links[0].href + '"></a></<div></div></div>';
     }
     for (let i = 0; i < result.collection.items.length; i++) {
-        document.getElementById("nasaImg").innerHTML += '<div class="descrip" display="none" onmouseover="showInfo()"></div>'
+        document.getElementById("nasaImg").innerHTML += '<div id="descript" display="none" mouseover="showInfo()"></div>'
         + result.collection.items[i].data[0].description;
     }
 };
@@ -77,18 +77,28 @@ input.addEventListener("keyup", function (event) {
         searchNasa();
     }
 });
+//to display the decription tags on images
+document.getElementById("nasaImg").addEventListener("mouseover", showInfo);
+document.getElementById("nasaImg").addEventListener("mouseout", noInfo);
 
-// TODO
+function showInfo() {
+    document.getElementsById("descript").style.display="block";
+}
+function noInfo() {
+    document.getElementsById("descript").style.display="none";
+}
+
+//CLOSE FUNCTION FOR SEARCH LIBRARY
 function closeLibrary() {
     document.getElementById("nasaLib").style.display = "none";
 }
-/////////////////////////////////////////
+/////////////////////////////////////////TODO
 const modal = document.getElementById("modalA");
 const btn = document.getElementById('myBtn');
 
 // library modal events
 function closeBtn() {
-    document.getElementById("close-apod").style.display = "none";
+    document.getElementById("modalA").style.display = "none";
 }
 
 window.onclick = function (event) {

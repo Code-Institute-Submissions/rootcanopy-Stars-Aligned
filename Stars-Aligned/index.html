@@ -21,11 +21,10 @@
         <button id="myBtn" class="myBtn" onclick="showData()">Photo of The Day</button>
         <!--  modal   body -->
         <div id="modalA" class="modal">
-            <!--<span class="closePOD" onlick="closeAPOD()">&times;</span>-->
+            <!-- button to close modal -->
+            <span class="closePOD" onclick="closeBtn()">&times;</span>
 
             <div class="apod-content">
-            <!-- button to close modal -->
-            <span id="close-apod" onclick="closeBtn()">&times;</span>
                 <!-- pic of day content-->
                 <h3 id="title"></h3>
                 <h4>Date:<br><span id="date"></span></h4>
@@ -50,7 +49,7 @@
                     <a href="#" onclick="closeLibrary()">Go Back</a>
                 </button>
                 <!-- media from api -->
-                <div id="nasaImg" id="descrip" class="nasaImg"></div>
+                <div id="nasaImg" class="nasaImg"></div>
                 
             </div>
         </div>
@@ -65,8 +64,7 @@
 </html>
 
 <!-- 
-TODO responsiveness
 TODO description on hover - gallery
-TODO mars weather api
+TODO another quick interactive api
 
 -->

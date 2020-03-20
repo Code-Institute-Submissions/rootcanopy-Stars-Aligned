@@ -161,10 +161,9 @@ input {
 
 /* ----- image library ---- */
 
-.descrip {
-    display: none;
+#descript {
     font-family: 'Space+Mono', sans-serif;
-    
+    font-size: 1em;
 }
 
 .response {
@@ -188,6 +187,7 @@ div.item:hover {
 
 
 /* ----- back button --- */
+
 button.imgButton {
     cursor: pointer;
     position: relative;
