@@ -10,6 +10,7 @@ html {
     color: white;
 }
 
+/* TODO - new background */
 body {
     background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
     background-size: cover;
@@ -96,12 +97,13 @@ button:active {
     color: #fa923f;
 }
 
-button.btn-close:hover {
-    color: red;
-}
-
-.btn-close {
+#close-apod {
     float: right;
+    position: relative;
+    cursor: pointer;
+    top: 0;
+    margin: 20px;
+    left: 0;
 }
 
 #pic {
@@ -114,26 +116,14 @@ button.btn-close:hover {
 .modal {
     display: none;
     /*set to none when setup in js*/
-    background-color: black;
+    background-color: #050404;
     position: fixed;
     z-index: 200;
     overflow: auto;
-    max-width: 100%;
+    width: 100%;
     height: 100%;
     top: 0;
-    left: 0;
-}
-
-#closeButton {
-    position: relative;
-    cursor: pointer;
-    top: 0;
-    margin: 20px;
-    left: 0;
-}
-
-.button {
-    display: flex;
+    margin: auto
 }
 
 .apod-content {
@@ -144,12 +134,6 @@ button.btn-close:hover {
     text-align: center
 }
 
-.closePOD {
-    color: white;
-    position: relative
-}
-
-
 /* ----------- library Search ------------ */
 
 input {
@@ -159,24 +143,48 @@ input {
     left: 10px;
 }
 
-.searchBox {
+.search {
+    max-width: 300px;
+    margin: 0 auto;
     position: relative;
     text-align: center;
-    margin: 2em
 }
 
-.searchBox #searchInput {
-    background: rgba(0, 0, 0,0.);
-    border-radius: 50px;
+.search input {
+    text-indent: 30px;
+    font-family: 'Space+Mono', sans-serif;
+    font-size: 0.8em;
+    color: black;
 }
 
-.searchBox #searchInput:active {
+.fa-search:hover,
+.fa-search:focus {
+    background-color: #fa923f;
+}
+
+.fa-search {
+    color: black;
+    cursor: pointer;
+}
+
+.search .fa-search {
+    position: absolute;
+    top: 6px;
+    left: 85%;
+    font-size: 1.5em;
+}
+
+.search #searchInput {
+    background: rgba(129, 125, 125, 0.4);
+}
+
+/* TODO come and check this */
+.search input#searchInput::-webkit-input-placeholder {
+    color: #65737e;
+}
+
+.search #searchInput {
     color: grey;
-}
-
-.searchBox #searchInput::placeholder {
-    color: #d12d10;
-    padding-left: 10px
 }
 
 .searchBox .search {
@@ -184,65 +192,107 @@ input {
     z-index: 6;
 }
 
-.searchBox input#searchInput:hover {
-    transition-duration: .5s;
+.search input#searchInput:hover {
+    transition-duration: .5s ease-in;
+    color: rgb(14, 12, 12)
 }
 
-.searchBox input#searchInput:hover,
-.searchBox input#search:focus,
-.searchBox input#searchInput:active {
+.search input#searchInput:hover,
+.search input#searchInput:focus,
+.search input#searchInput:active {
     outline: none;
     background: white;
 }
 
-.searchBox a:hover {
+.search a:hover {
     cursor: pointer;
 }
 
 /* ----- image library ---- */
 
-.images img {
-    width: 100%;
-    height: auto;
-    padding: 10px;
-    margin: 0;
-    display: block
+.response {
+    line-height: 4;
+    display: inline-flex;
+    margin: 1em;
 }
 
 .images .item {
+    width: 100%;
+    height: auto;
+}
+.images .item {
     border: 1px solid #fa923f;
-    justify-content: center;
 }
-.response {
-    width: 40%;
-    padding: 10px 0;
-    float: left;
-}
-div .item:hover {
+
+div.item:hover {
     border: 1px solid white
 }
-.column {
-    float:left;
-    width:25%;
+
+/*.column {
+    float: ;
+    width: 25%;
 }
+
+/* ----- back button --- */
+button.imgButton {
+    cursor: pointer;
+    position: relative;
+    transition: .5s ease;
+    font-family: 'Coustard';
+}
+
+.imgButton {
+    color: white;
+    border: 2px solid;
+    padding-left: 10px;
+    margin: 1rem;
+    height: 3em;
+    width: 6em;
+    font-size: 20px;
+    display: flex;
+    background-color: transparent;
+}
+
+a {
+    color: white;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+
+a.imgButton:hover,
+a.imgButton:focus {
+    border-color: #fa923f;
+    color: #fa923f;
+}
+
 
 /* ---- media queries */
 
-
-@media only screen and (max-width: 700px) {
-    .response {
-        width: 90%;
-        margin: 10px 0;
+@media (max-width: 1200px) {
+    .item {
+    -moz-column-count:    3;
+    -webkit-column-count: 3;
+    column-count:         3;
     }
-}
-@media only screen and (max-width: 500px) {
-    .response {
-        width: 80%;
-        margin: 10px 0;
+  }
+  @media (max-width: 1000px) {
+    .item {
+    -moz-column-count:    2;
+    -webkit-column-count: 2;
+    column-count:         2;
     }
-}
-.clearfix:after {
-    content: "";
-    display: table;
-    clear: both;
-}
+  }
+  @media (max-width: 800px) {
+    .item {
+    -moz-column-count:    2;
+    -webkit-column-count: 2;
+    column-count:         2;
+    }
+  }
+  @media (max-width: 400px) {
+    .item {
+    -moz-column-count:    1;
+    -webkit-column-count: 1;
+    column-count:         1;
+    }
+  }

@@ -18,36 +18,39 @@
         <!-- photo of the day button -->
         <button id="myBtn" class="myBtn" onclick="showData()">Photo of The Day</button>
         <!--  modal   body -->
-        <div id="ModalA" class="modal">
+        <div id="modalA" class="modal">
             <!--<span class="closePOD" onlick="closeAPOD()">&times;</span>-->
 
             <div class="apod-content">
-
+            <!-- button to close modal -->
+            <span id="close-apod" onclick="closeBtn()">&times;</span>
+                <!-- pic of day content-->
                 <h3 id="title"></h3>
                 <h4>Date:<br><span id="date"></span></h4>
-                <img id="pic" src="" alt="NASA" />
+                <img id="pic" src="" alt="NASA">
                 <p id="explanation"></p>
-                <!-- button to close modal -->
-                <span class="btn-close-apod" onclick="closeBtn()">&times;</span>
-
+                
             </div>
         </div>
         <!-- user input search function -->
-        <div class="search">
-            <div class="searchBox">
-                <input id="searchInput" type="input" placeholder="Search NASA .."></input>
+            <div class="search">
+                <input id="searchInput" type="text" placeholder="Search images ..">
                 <!-- This is the user search button -->
-                <span class="clickerClose"><a onclick="searchNasa()"><i class="fa fa-search"></i></a></span>
+                <span class="clickerClose"><a>
+                    <i onclick="searchNasa()" 
+                    class="fa fa-search"></i></a>
+                </span>
             </div>
-        </div>
         <!-- This is the image modal library-->
         <div class="image-wrapper">
             <div id="nasaLib" class="modal">
                 <!-- back button for modal -->
-                <div class="imgButton" id="buttonClose"></div>
+                <button class="imgButton" id="buttonClose">
+                    <a href="#" onclick="closeLibrary()">Go Back</a>
+                </button>
                 <!-- media from api -->
                 <div id="nasaImg" class="nasaImg"></div>
-                <a href="#" onclick="closeLibrary()">Go Back</a>
+                
             </div>
         </div>
 
@@ -59,3 +62,11 @@
 </body>
 
 </html>
+
+<!-- 
+TODO new background
+TODO responsiveness
+TODO description on hover - gallery
+TODO mars weather api
+
+-->
