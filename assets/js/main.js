@@ -60,7 +60,7 @@ function Library(result) {
         + result.collection.items[i].links[0].href + '"></a></<div></div></div>';
     }
     for (let i = 0; i < result.collection.items.length; i++) {
-        document.getElementById("nasaImg").innerHTML += '<div id="descript" display="none" mouseover="showInfo()"></div>'
+        document.getElementById("nasaImg").innerHTML += '<div class="descript" display="none" mouseover="showInfo()"></div>'
         + result.collection.items[i].data[0].description;
     }
 };
@@ -82,10 +82,10 @@ document.getElementById("nasaImg").addEventListener("mouseover", showInfo);
 document.getElementById("nasaImg").addEventListener("mouseout", noInfo);
 
 function showInfo() {
-    document.getElementsById("descript").style.display="block";
+    document.getElementsByClassName("descript").style.display="block";
 }
 function noInfo() {
-    document.getElementsById("descript").style.display="none";
+    document.getElementsByClass("descript").style.display="none";
 }
 
 //CLOSE FUNCTION FOR SEARCH LIBRARY

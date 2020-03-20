@@ -22,7 +22,7 @@
         <!--  modal   body -->
         <div id="modalA" class="modal">
             <!-- button to close modal -->
-            <span class="closePOD" onclick="closeBtn()">&times;</span>
+            <span id="closePOD" onclick="closeBtn()">&times;</span>
 
             <div class="apod-content">
                 <!-- pic of day content-->
@@ -30,17 +30,17 @@
                 <h4>Date:<br><span id="date"></span></h4>
                 <img id="pic" src="" alt="NASA">
                 <p id="explanation"></p>
-                
+
             </div>
         </div>
         <!-- user input search function -->
-            <div class="search">
-                <input id="searchInput" type="text" placeholder="Search images ..">
-                <!-- This is the user search button -->
-                <span class="clickerClose">
-                   <a><i onclick="searchNasa()" class="fa fa-search"></i></a>  
-                </span>
-            </div>
+        <div class="search">
+            <input id="searchInput" type="text" placeholder="Search images ..">
+            <!-- This is the user search button -->
+            <span class="clickerClose">
+                <a><i onclick="searchNasa()" class="fa fa-search"></i></a>
+            </span>
+        </div>
         <!-- This is the image modal library-->
         <div class="image-wrapper">
             <div id="nasaLib" class="modal">
@@ -50,13 +50,13 @@
                 </button>
                 <!-- media from api -->
                 <div id="nasaImg" class="nasaImg"></div>
-                
+
             </div>
         </div>
 
     </main>
 
-    <script src="./assets/style.js/main.js"></script>
+    <script src="./assets/js/main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
 </body>
