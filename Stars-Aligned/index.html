@@ -17,10 +17,9 @@
 
         <!-- photo of the day button -->
         <button id="myBtn" class="myBtn" onclick="showData()">Photo of The Day</button>
-
         <!--  modal   body -->
         <div id="ModalA" class="modal">
-            <span class="closePOD" onlick="closeAPOD()">&times;</span>
+            <!--<span class="closePOD" onlick="closeAPOD()">&times;</span>-->
 
             <div class="apod-content">
 
@@ -29,7 +28,7 @@
                 <img id="pic" src="" alt="NASA" />
                 <p id="explanation"></p>
                 <!-- button to close modal -->
-                <!--<span class="btn-close-apod" onClick="closeBtn()">&times;</span>-->
+                <span class="btn-close-apod" onclick="closeBtn()">&times;</span>
 
             </div>
         </div>
@@ -42,16 +41,16 @@
             </div>
         </div>
         <!-- This is the image modal library-->
-        <div class="container">
+        <div class="image-wrapper">
             <div id="nasaLib" class="modal">
                 <!-- back button for modal -->
-                <div class="button" id="buttonClose"></div>
+                <div class="imgButton" id="buttonClose"></div>
                 <!-- media from api -->
-                <div id="test" class="nasaImg"></div>
+                <div id="nasaImg" class="nasaImg"></div>
                 <a href="#" onclick="closeLibrary()">Go Back</a>
             </div>
         </div>
-        
+
     </main>
     <script src="./assets/style.js/main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

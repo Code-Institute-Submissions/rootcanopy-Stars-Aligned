@@ -73,10 +73,10 @@ function searchNasa() {
 }
 // @ts-check
 function Library(result) {
-    $(".nasaImg").empty();
+    //$(".nasaImg").empty();
 
     for (let i = 0; i < result.collection.items.length; i++) {
-        document.getElementById("test").innerHTML += '<div class="nasaLibrary"><div class="images"><a target="_blank" href="' 
+        document.getElementById("nasaImg").innerHTML += '<div class="response"><div class="images"><a target="_blank" href="' 
         + result.collection.items[i].links[0].href + '"><img class="item" width="600" height="600" src="' 
         + result.collection.items[i].links[0].href + '"></a></<div></div>';
     } // 

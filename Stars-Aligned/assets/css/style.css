@@ -32,10 +32,9 @@ canvas {
 
 #particles-js {
     position: absolute;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background-color: transparent;
-    /*background-image: url("");*/
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -58,8 +57,8 @@ canvas {
     padding-bottom: 2px;
     font-family: Helvetica, Arial, sans-serif;
     font-weight: bold;
-}
-*/
+}*/
+
 .js-count-particles {
     font-size: 1.1em;
 }
@@ -110,18 +109,19 @@ button.btn-close:hover {
     height: 400px;
 }
 
-/* ---- APODmodal ---- */
+/* ---- modals---- */
 
 .modal {
     display: none;
     /*set to none when setup in js*/
     background-color: black;
-    position: absolute;
+    position: fixed;
     z-index: 200;
-    width: 100vw;
+    overflow: auto;
+    max-width: 100%;
+    height: 100%;
     top: 0;
     left: 0;
-
 }
 
 #closeButton {
@@ -156,7 +156,7 @@ input {
     height: 50px;
     font-size: 20px;
     position: relative;
-    left: 10px:
+    left: 10px;
 }
 
 .searchBox {
@@ -166,12 +166,12 @@ input {
 }
 
 .searchBox #searchInput {
-    background: rgba(0, 0, 0, 1);
+    background: rgba(0, 0, 0,0.);
     border-radius: 50px;
 }
 
 .searchBox #searchInput:active {
-    color: ;
+    color: grey;
 }
 
 .searchBox #searchInput::placeholder {
@@ -201,18 +201,48 @@ input {
 
 /* ----- image library ---- */
 
-.nasaLibrary img {
-    width: auto;
+.images img {
+    width: 100%;
     height: auto;
+    padding: 10px;
+    margin: 0;
+    display: block
+}
+
+.images .item {
     border: 1px solid #fa923f;
-    margin: auto;
-    float: right;
+    justify-content: center;
 }
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 5px
+.response {
+    width: 40%;
+    padding: 10px 0;
+    float: left;
 }
-div .nasaLibrary:hover {
-    border: 1px solid #777
+div .item:hover {
+    border: 1px solid white
+}
+.column {
+    float:left;
+    width:25%;
+}
+
+/* ---- media queries */
+
+
+@media only screen and (max-width: 700px) {
+    .response {
+        width: 90%;
+        margin: 10px 0;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .response {
+        width: 80%;
+        margin: 10px 0;
+    }
+}
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
 }
