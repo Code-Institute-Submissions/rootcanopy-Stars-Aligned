@@ -34,9 +34,11 @@ function showData() {
 }
 // THIS CLOSES THE APOD MODAL
 function closeBtn() {
-    document.getElementsByClassName("modal").style.display ="none";
+    document.getElementById("modalA").style.display ="none";
 }
 // THIS ENSURES THE USER CAN CLICK ANYWHERE TO ESCAPE
+var modal = document.getElementById("modalA");
+
 window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
@@ -69,12 +71,12 @@ function searchNasa() {
 // @ts-check
 function Library(result) {
     //console.log(result.collection.items);
-    for (let i = 0; i < result.collection.items.length; i++) {
+    for (var i = 0; i < result.collection.items.length; i++) {
         document.getElementById("nasaImg").innerHTML += '<div class="response"><div class="images"><a target="_blank" alt="Nava earth images" href="' 
-        + result.collection.items[i].links[0].href + '"><div id="description" onmouseover="showInfo()" onmouseout="hideIt()"> ' + result.collection.items[i].data[0].description + '</div><img class="item" width="400" height="400" src="' 
+        + result.collection.items[i].links[0].href + '"><div class="description" onmouseover="showInfo(this)" onmouseout="noInfo(this)"> ' + result.collection.items[i].data[0].description + '</div><img class="item" width="400" height="400" src="' 
         + result.collection.items[i].links[0].href + '"></a></<div></div></div>';
     }
-};
+}
 
 // Get the input field
 var input = document.getElementById("searchInput");
@@ -89,36 +91,14 @@ input.addEventListener("keyup", function (event) {
     }
 });
 //to display the decription tags on images 
-function showInfo() {
-    document.getElementById("description").style.display="block";
+function showInfo(element) {
+    element.style.display="block";
 }
-function noInfo() {
-    document.getElementById("description").style.display="none";
+function noInfo(element) {
+    element.style.display="none";
 }
 
 //CLOSE FUNCTION FOR SEARCH LIBRARY
 function closeLibrary() {
     document.getElementById("nasaLib").style.display = "none";
 }
-
-
-window.onclick = function (event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-};
-
-
-
-/*
-btn.onclick = function closeBtn() {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-};
-//adding some effects 
-
-btn.onclick = function () {
-    modal.style.display = "block";
-};
-*/

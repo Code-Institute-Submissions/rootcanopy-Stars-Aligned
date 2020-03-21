@@ -48,13 +48,17 @@ button:active {
     color: #fa923f;
 }
 
-#close-apod {
+#closePOD {
     float: right;
     position: relative;
     cursor: pointer;
     top: 0;
     margin: 20px;
     left: 0;
+}
+
+#closePOD:hover {
+    color: #fa923f
 }
 
 #pic {
@@ -162,21 +166,24 @@ input {
 
 /* ----- image library ---- */
 
-div#description {
+.description {
     font-family: 'Space+Mono', sans-serif;
     font-size: 10px;
-    position: absolute;
-    top:100px;
-    z-index: ;
+    /*position: relative;*/
+    top: 100px;
+    z-index: 4;
 
-    display:none;
+    display: ;
 }
-div#description:hover {
-    z-index: 2;
+
+.description:hover,
+.description:focus{
+    display: block;
+    cursor:pointer
 }
 
 .response {
-    line-height: 4;
+    line-height: 2;
     display: inline-flex;
     margin: 1em;
     flex-wrap: row;
@@ -191,8 +198,9 @@ div#description:hover {
     border: 1px solid #fa923f;
 }
 
-div.item:hover {
-    border: 1px solid white
+.response:hover + .description {
+    border: 1px solid white;
+    display: block
 }
 
 
