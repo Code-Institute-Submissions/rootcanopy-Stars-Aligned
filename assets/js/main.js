@@ -72,7 +72,7 @@ function searchNasa() {
 function Library(result) {
     //console.log(result.collection.items);
     for (var i = 0; i < result.collection.items.length; i++) { //the line beneath, appending to html, is one line to get rid of linebreak issue in jshint - vscode 
-        document.getElementById("nasaImg").innerHTML += '<div class="response"><div class="images"><a target="_blank" alt="Nava earth images" href="' + result.collection.items[i].links[0].href + '"><div class="description> ' + result.collection.items[i].data[0].description + '</div><img class="item" width="400" height="400" src="' + result.collection.items[i].links[0].href + '"></a></<div></div></div>';
+        document.getElementById("nasaImg").innerHTML += '<div class="images"><a target="_blank" alt="Nava earth images" href="' + result.collection.items[i].links[0].href + '"><div class="description"> ' + result.collection.items[i].data[0].description + '</div><img class="item" width="600" height="600" src="' + result.collection.items[i].links[0].href + '"></a></div></div></div>';
     }
 }
 
@@ -87,7 +87,7 @@ input.addEventListener("keyup", function (event) {
         // Trigger the button element with a click
         searchNasa();
         // clear search
-        input.value = "";
+        //input.value = "";
     }
 });
 //to display the decription tags on images 

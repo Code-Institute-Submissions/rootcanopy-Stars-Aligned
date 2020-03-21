@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Space+Mono:100,200,300,400,500,600;');
 
 * {
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
 html {
@@ -166,41 +166,50 @@ input {
 
 /* ----- image library ---- */
 
+.flex-container {
+    display: flex;
+    flex-flow: row wrap;
+}
+.item {
+    margin-top: 8px;
+    max-width: 100%;
+    height:auto;
+    display: inline-flex;
+    float: right;
+    margin: 5%;
+}
 .description {
     font-family: 'Space+Mono', sans-serif;
     font-size: 10px;
-    /*position: relative;*/
+    position: relative;
     top: 100px;
     z-index: 4;
-
     display: none;
 }
+.images {
+    margin:auto;
+    align-items: center;
+} 
 
 .description:hover,
-.description:focus{
+.item:hover {
     display: ;
-    cursor:pointer
+    cursor: pointer;
 }
 
-.response {
+/*.response {
     line-height: 2;
-    display: inline-flex;
     margin: 1em;
-    flex-wrap: row;
-}
+}*/
 
-.images .item {
-    width: 100%;
+.item {
+    max-width: 100%;
     height: auto;
+    border: 2px solid #fa923f;
 }
 
-.images .item {
-    border: 1px solid #fa923f;
-}
-
-.response:hover {
+.item:hover {
     border: 1px solid white;
-    display: block
 }
 
 
