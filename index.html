@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NASA-API</title>
+    <title>ASTRO-NAUT</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 
@@ -45,7 +45,7 @@
         <!-- This is the image modal library-->
         <div id="nasaLib" class="modal">
             <!-- back button for modal -->
-            <button class="imgButton" id="buttonClose">
+            <button class="imgButton" id="buttonClose" onClick="reloadThePage()">
                 <a href="#" onclick="closeLibrary()">Go Back</a>
             </button>
             <!-- media from api -->
@@ -55,7 +55,7 @@
         </div>
 
     </main>
-
+    <script src="./assets/js/astro.js"></script>
     <script src="./assets/js/main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 

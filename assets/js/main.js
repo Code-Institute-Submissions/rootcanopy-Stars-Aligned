@@ -1,3 +1,4 @@
+
 // API CALL FOR PIC OF DAY
 const apodURL = "https://api.nasa.gov/planetary/apod?api_key=";
 const api_key = "aTzWAFGW6diC9Gmiv2motIrgf68tuKJyXiXxQ8IL";
@@ -47,7 +48,7 @@ window.onclick = function (event) {
 
 // THIS IS THE SEARCH LIBRARY REQUEST
 const searchUrl = "https://images-api.nasa.gov/";
-const query = "search?title="; //+ "image"; // "&description=" + ""
+const query = "search?q="; //+ "image"; // "&description=" + ""
 
 // @ts-check
 function searchNasa() {
@@ -102,3 +103,7 @@ function noInfo(element) {
 function closeLibrary() {
     document.getElementById("nasaLib").style.display = "none";
 }
+//RELOADS THE PAGE PRESSING BACK SO NO STORED CACHE IN SEARCH INPUT
+function reloadThePage(){
+    window.location.reload();
+} 
