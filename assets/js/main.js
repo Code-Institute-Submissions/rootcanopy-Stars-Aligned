@@ -71,10 +71,8 @@ function searchNasa() {
 // @ts-check
 function Library(result) {
     //console.log(result.collection.items);
-    for (var i = 0; i < result.collection.items.length; i++) {
-        document.getElementById("nasaImg").innerHTML += '<div class="response"><div class="images"><a target="_blank" alt="Nava earth images" href="' 
-        + result.collection.items[i].links[0].href + '"><div class="description" onmouseover="showInfo(this)" onmouseout="noInfo(this)"> ' + result.collection.items[i].data[0].description + '</div><img class="item" width="400" height="400" src="' 
-        + result.collection.items[i].links[0].href + '"></a></<div></div></div>';
+    for (var i = 0; i < result.collection.items.length; i++) { //the line beneath, appending to html, is one line to get rid of linebreak issue in jshint - vscode 
+        document.getElementById("nasaImg").innerHTML += '<div class="response"><div class="images"><a target="_blank" alt="Nava earth images" href="' + result.collection.items[i].links[0].href + '"><div class="description> ' + result.collection.items[i].data[0].description + '</div><img class="item" width="400" height="400" src="' + result.collection.items[i].links[0].href + '"></a></<div></div></div>';
     }
 }
 
@@ -88,6 +86,8 @@ input.addEventListener("keyup", function (event) {
         event.preventDefault();
         // Trigger the button element with a click
         searchNasa();
+        // clear search
+        input.value = "";
     }
 });
 //to display the decription tags on images 

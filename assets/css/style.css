@@ -173,12 +173,12 @@ input {
     top: 100px;
     z-index: 4;
 
-    display: ;
+    display: none;
 }
 
 .description:hover,
 .description:focus{
-    display: block;
+    display: ;
     cursor:pointer
 }
 
@@ -198,7 +198,7 @@ input {
     border: 1px solid #fa923f;
 }
 
-.response:hover + .description {
+.response:hover {
     border: 1px solid white;
     display: block
 }
