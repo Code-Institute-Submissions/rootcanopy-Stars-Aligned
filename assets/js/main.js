@@ -2,17 +2,17 @@
 // API CALL FOR PIC OF DAY
 const apodURL = "https://api.nasa.gov/planetary/apod?api_key=";
 const api_key = "aTzWAFGW6diC9Gmiv2motIrgf68tuKJyXiXxQ8IL";
-var data;
 
 function api_call() {
     var xhr = new XMLHttpRequest();
 
     xhr.open("GET", apodURL + api_key, true);
 
-    xhr.onreadystatechange = function () {
+    xhr.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
-            data = JSON.parse(this.responseText);
-            //data here and above => let declares a global variable 
+            let data = JSON.parse(this.responseText);
+            //data here and above => let declares a global variable
+            console.log(data);
         }
     };
     xhr.send();
@@ -48,11 +48,11 @@ window.onclick = function (event) {
 
 // THIS IS THE SEARCH LIBRARY REQUEST
 const searchUrl = "https://images-api.nasa.gov/";
-const query = "search?q="; //+ "image"; // "&description=" + ""
+const query = "search?q="; //+ "image"; //"&description=" + ""
 
 // @ts-check
-function searchNasa() {
-    let Input = document.getElementById("searchInput").value;
+function searchBox() {
+    const Input = document.getElementById("searchInput").value;
 
     let xhr = new XMLHttpRequest();
     let URL = searchUrl + query + Input;
@@ -86,7 +86,7 @@ input.addEventListener("keyup", function (event) {
         // Cancel the default action, if needed
         event.preventDefault();
         // Trigger the button element with a click
-        searchNasa();
+        searchBox();
         // clear search
         //input.value = "";
     }

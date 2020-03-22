@@ -245,6 +245,14 @@ a.imgButton:focus {
     color: #fa923f;
 }
 
+/* ----- leaflet map ---- */
+
+#theMap {
+    height: 50vh;
+    width: 100vw;
+    color:white;
+    display:block
+}
 
 /* ---- media queries */
 
