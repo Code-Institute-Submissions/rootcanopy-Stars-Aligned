@@ -7,9 +7,12 @@
     <title>ASTRO-NAUT</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
-   <!--Scripts -->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.js" integrity="sha256-fNoRrwkP2GuYPbNSJmMJOCyfRB2DhPQe0rGTgzRsyso=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+    <!--Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.js"
+        integrity="sha256-fNoRrwkP2GuYPbNSJmMJOCyfRB2DhPQe0rGTgzRsyso=" crossorigin="anonymous"></script>
 
 </head>
 
@@ -21,7 +24,7 @@
         </div>
 
         <!-- photo of the day button -->
-        <button id="myBtn" class="myBtn" onclick="api_call()">Photo of The Day</button>
+        <button id="myBtn" class="myBtn" onclick="apiCall()">Photo of The Day</button>
         <!--  modal   body -->
         <div id="modalA" class="modal">
             <!-- button to close modal -->
@@ -29,15 +32,28 @@
 
             <div class="apod-content">
                 <!-- pic of day content-->
+                <div class="cirlce"></div>
                 <h3 id="title"></h3>
                 <h4>Date:<br><span id="date"></span></h4>
-                <img id="pic" src="" alt="NASA">
-                <div id="mediaConatiner"></div>
+                <!--<img id="pic" src="" alt="NASA">-->
+                <div id="mediaContainer"></div>
                 <p id="explanation"></p>
-
             </div>
         </div>
-        <!-- user input search function -->
+        <div class="container">
+            <div id="qoute">
+                <span>
+                    <i>"Man must rise above the Earth—to the top of the atmosphere and beyond. For only thus will he fully understand the world in which he lives. 
+                        Astronomy compels the soul to look upward, and leads us from this world to another."</i>
+                </span></br></br>
+                <span>
+                    -Unknown
+                </span>
+            </div>
+        </div>
+
+            </div> <!-- user input search function -->
+        </div>
         <div class="search">
             <input id="searchInput" type="search" placeholder="Search images ..">
             <!-- This is the user search button -->
@@ -53,23 +69,28 @@
                 <a href="#" onclick="closeLibrary()">Go Back</a>
             </button>
             <!-- media from api -->
-            <div class="flex-container">
+            
                 <div id="nasaImg" class="nasaImg"></div>
-            </div>
         </div>
-    
-        <p>
-            latitude: <span id="lat"></span>°<br />
-            longitude: <span id="lon"></span>°
-        </p>
-
-            <div id="myEarth"></div>
+        
+        <!--CORDINATES-->
+        <div id="iss-cor">    
+            <p>
+                latitude: <span id="lat"></span>°<br />
+                longitude: <span id="lon"></span>°
+            </p>
+        </div>    
+        
+        <!--MAP ISS-->
+        <div id="myEarth"></div>
 
     </main>
     <!---  scripts -->
     <script src="./assets/js/astro.js"></script>
     <script src="./assets/js/main.js"></script>
-    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
 
 </body>
 

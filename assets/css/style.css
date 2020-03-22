@@ -42,6 +42,21 @@ button.myBtn {
     text-align: center;
 }
 
+@media (max-width: 450px) {
+    button.myBtn {
+        font-size: 1em;
+    }
+
+    iframe {
+        width: 300px;
+        overflow: hidden
+    }
+
+    input.searchBox {
+        height: 40px
+    }
+}
+
 button:hover,
 button:active {
     /* active not working */
@@ -132,7 +147,23 @@ input {
     font-size: 1.5em;
 }
 
+.circle {
+
+    width: 0;
+    height: 0;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    background: #BFC0C0;
+    position: absolute;
+    transition: all .5s ease-Out;
+    top: 25px;
+    left: 105px;
+
+}
+
 .search #searchInput {
+    margin-top: 0px;
     background: rgba(129, 125, 125, 0.4);
 }
 
@@ -170,17 +201,19 @@ input {
 .flex-container {
     /*display: flex;*/
     flex-flow: row wrap;
-    
+
 }
+
 .item {
     margin-top: 8px;
     max-width: 100%;
-    height:auto;
-    display:inline-flex;
-    margin:auto;
-    float:left;
+    height: auto;
+    display: inline-flex;
+    margin: auto;
+    float: left;
     justify-content: space-around;
 }
+
 .description {
     font-family: 'Space+Mono', sans-serif;
     font-size: 10px;
@@ -248,18 +281,53 @@ a.imgButton:focus {
 
 /* ----- leaflet map ---- */
 
-p , span {
-    bottom:10px
-}
-
 #myEarth {
     height: 30vh;
     width: 50%;
-    display:block;
-    position:absolute;
+    display: block;
+    position: absolute;
     z-index: -40;
-    bottom:10px
+    bottom: 0px;
 }
+
+/* -- text --- */
+#iss-cor p {
+    margin-bottom: 0;
+    margin-top: 800px;
+    margin-left: 10%;
+    /*display:block;*/
+    position: absolute;
+    color: black
+}
+
+#animaText {
+    position: absolute;
+    font-weight: 300;
+    top: 30%;
+    left: 0;
+    right: 0;
+    margin-top: -80px;
+    font-size: 130px;
+    text-align: center;
+    letter-spacing: 20px;
+    padding-left: 20px;
+    background: ;
+
+}
+
+#quote {
+    position: absolute;
+    font-weight: 300;
+    top: 70%;
+    left: 0;
+    right: 0;
+    width: 70%;
+    margin: auto;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 6px;
+}
+
 
 /* ---- media queries */
 
@@ -281,11 +349,11 @@ p , span {
 
 @media (max-width: 800px) {
     .item {
-        margin:auto;
+        margin: auto;
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 320px) {
     .item {
         -moz-column-count: 1;
         -webkit-column-count: 1;
