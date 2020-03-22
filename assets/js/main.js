@@ -11,6 +11,7 @@ function api_call() {
     xhr.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
             let data = JSON.parse(this.responseText);
+            showData(data);
             //data here and above => let declares a global variable
             //console.log(data);
         }
@@ -18,21 +19,24 @@ function api_call() {
     xhr.send();
 } 
 
-function showData() { 
+function showData(data) { 
     document.getElementById("title").innerHTML = data.title;
     document.getElementById("date").innerHTML = data.date;
-    document.getElementById("pic").src = data.hdurl;
+    //document.getElementById("pic").src = data.hdurl;
     document.getElementById("explanation").innerHTML = data.explanation;
+
+    if (data.media_type == "video") {
+        document.getElementById("mediaContainer").innerHTML = '<video width="320" height="240" controls><source src="movie.mp4" type="video/mp4"></video>';
+    } else {
+        document.getElementById("mediaContainer").innerHTML = '<img src="' + data.hdurl + '" alt="picture of the day>"';
+    }
 }
-
 // BUTTON ON CLICK OPENS APOD
-
-//TODO
-function showData() {
+function api_call() {
     document.getElementById("modalA").style.display="block";
 
     document.getElementById("myBtn").addEventListener("click", showData);
-    api_call();
+    //api_call();
 }
 // THIS CLOSES THE APOD MODAL
 function closeBtn() {
@@ -72,9 +76,9 @@ function searchBox() {
 // sending search results to the DOM
 // @ts-check
 function Library(result) {
-    //console.log(result.collection.items);
+
     for (var i = 0; i < result.collection.items.length; i++) { //the line beneath, appending to html, is one line to get rid of linebreak issue in jshint - vscode 
-        document.getElementById("nasaImg").innerHTML += '<div class="images"><a target="_blank" alt="Nava earth images" href="' + result.collection.items[i].links[0].href + '"><div class="description"> ' + result.collection.items[i].data[0].description + '</div><img class="item" width="600" height="600" src="' + result.collection.items[i].links[0].href + '"></a></div></div></div>';
+        document.getElementById("nasaImg").innerHTML += '<div class="images"><a target="_blank" alt="Nava earth images" href="' + result.collection.items[i].links[0].href + '"><div class="description"> ' + result.collection.items[i].data[0].description + '</div><img class="item" width="600" height="600" src="' + result.collection.items[i].links[0].href + '"></a></div></div>';
     }
 }
 
@@ -89,7 +93,6 @@ input.addEventListener("keyup", function (event) {
         // Trigger the button element with a click
         searchBox();
         // clear search
-        //input.value = "";
     }
 });
 //to display the decription tags on images 

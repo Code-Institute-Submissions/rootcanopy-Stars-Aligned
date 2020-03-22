@@ -248,9 +248,13 @@ a.imgButton:focus {
 
 /* ----- leaflet map ---- */
 
+p , span {
+    bottom:10px
+}
+
 #myEarth {
-    height: 40vh;
-    width: 80%;
+    height: 30vh;
+    width: 50%;
     display:block;
     position:absolute;
     z-index: -40;
