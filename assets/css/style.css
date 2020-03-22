@@ -147,21 +147,6 @@ input {
     font-size: 1.5em;
 }
 
-.circle {
-
-    width: 0;
-    height: 0;
-    opacity: 0;
-    line-height: 40px;
-    border-radius: 50%;
-    background: #BFC0C0;
-    position: absolute;
-    transition: all .5s ease-Out;
-    top: 25px;
-    left: 105px;
-
-}
-
 .search #searchInput {
     margin-top: 0px;
     background: rgba(129, 125, 125, 0.4);
@@ -198,11 +183,18 @@ input {
 
 /* ----- image library ---- */
 
-.flex-container {
-    /*display: flex;*/
-    flex-flow: row wrap;
-
+.nasaImg#nasaImg {
+    left: 0;
+    right: 0;
+    display: block;
+    margin: 70px auto 0 auto;
 }
+
+.nasaImages img {
+    margin: auto;
+    display: block;
+}
+
 
 .item {
     margin-top: 8px;
@@ -212,7 +204,11 @@ input {
     margin: auto;
     float: left;
     justify-content: space-around;
-}
+        padding: 0 6px;
+        float: left;
+        width: 24.99999%;
+    }
+
 
 .description {
     font-family: 'Space+Mono', sans-serif;
