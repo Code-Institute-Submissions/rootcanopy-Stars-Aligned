@@ -249,11 +249,12 @@ a.imgButton:focus {
 /* ----- leaflet map ---- */
 
 #myEarth {
-    height: 30vh;
-    width: 50%;
+    height: 40vh;
+    width: 80%;
     display:block;
     position:absolute;
-    z-index: -50
+    z-index: -40;
+    bottom:10px
 }
 
 /* ---- media queries */

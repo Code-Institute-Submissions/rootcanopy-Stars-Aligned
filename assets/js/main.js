@@ -12,18 +12,19 @@ function api_call() {
         if (this.readyState === 4 && this.status === 200) {
             let data = JSON.parse(this.responseText);
             //data here and above => let declares a global variable
-            console.log(data);
+            //console.log(data);
         }
     };
     xhr.send();
-}
-// TODO
-function showData(data) { 
+} 
+
+function showData() { 
     document.getElementById("title").innerHTML = data.title;
     document.getElementById("date").innerHTML = data.date;
     document.getElementById("pic").src = data.hdurl;
     document.getElementById("explanation").innerHTML = data.explanation;
 }
+
 // BUTTON ON CLICK OPENS APOD
 
 //TODO
