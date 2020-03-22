@@ -10,13 +10,7 @@ html {
     color: white;
 
 }
-html,body {
-    top:0;
-    right:0;
-    bottom:0;
-    left:0;
-    position:absolute !important;}
-}
+
 body {
     background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
     background-size: cover;
@@ -254,11 +248,12 @@ a.imgButton:focus {
 
 /* ----- leaflet map ---- */
 
-#theMap {
-    height: 50vh;
-    width: 100vw;
-    color:white;
-    display:block
+#myEarth {
+    height: 30vh;
+    width: 50%;
+    display:block;
+    position:absolute;
+    z-index: -50
 }
 
 /* ---- media queries */
