@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <main>
+    <main class="global" onload="initialize()">
         <!-- This is the star background-->
         <div class="galaxy">
             <div class="stars"></div>
@@ -62,13 +62,14 @@
             longitude: <span id="lon"></span>°
         </p>
 
-        <div id="theMap"></div>
+        <div id="myEarth"></div>
 
     </main>
     <!---  scripts -->
     <script src="./assets/js/astro.js"></script>
     <script src="./assets/js/main.js"></script>
     <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+    <script src="http://www.webglearth.com/v2/api.js"></script>
 
 </body>
 
