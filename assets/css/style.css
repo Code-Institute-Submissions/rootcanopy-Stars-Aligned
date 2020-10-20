@@ -275,16 +275,6 @@ a.imgButton:focus {
     color: #fa923f;
 }
 
-/* ----- leaflet map ---- */
-
-#myEarth {
-    height: 30vh;
-    width: 50%;
-    display: block;
-    position: absolute;
-    z-index: -40;
-    bottom: 0px;
-}
 
 /* -- text --- */
 #iss-cor p {
