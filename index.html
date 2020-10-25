@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ASTRO-NAUT</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 </head>
 
 <body>
@@ -32,41 +32,45 @@
                 <p id="explanation"></p>
             </div>
         </div>
+
+        <!-- Search input --> 
+        <div class="search">
+            <input class="input-group" id="searchInput" type="search" placeholder="Search images ..">
+            <!-- This is the user search button -->
+            <span class="clickerClose">
+                <i onclick="searchBox()" class="fa fa-search"></i>
+            </span>
+        </div>
+
+        <!-- The quote -->
         <div class="container">
             <div id="qoute">
                 <span>
                     <i>"Man must rise above the Earth—to the top of the atmosphere and beyond. For only thus will he fully understand the world in which he lives. 
-                        Astronomy compels the soul to look upward, and leads us from this world to another."</i>
-                </span></br></br>
+                        Astronomy compels the soul to look upward, and leads us from this world to another."
+                    </i>
+                </span>
+                </br>
+                </br>
                 
-                <span>
+                <span class="unknown">
                     -Unknown
                 </span>
             </div>
         </div>
 
-            </div> <!-- user input search function -->
-        </div>
-        <div class="search">
-            <input id="searchInput" type="search" placeholder="Search images ..">
-            <!-- This is the user search button -->
-            <span class="clickerClose">
-                <a><i onclick="searchBox()" class="fa fa-search"></i></a>
-            </span>
-        </div>
-
-        <!-- This is the image modal library-->
+        <!-- Image modal library-->
         <div id="nasaLib" class="modal">
             <!-- back button for modal and reload page ()-->
-            <button class="imgButton" id="buttonClose" onClick="reloadThePage()">
-                <a href="#" onclick="closeLibrary()">Go Back</a>
-            </button>
+            <i id="buttonClose" onClick="reloadThePage()" 
+                class="fa fa-angle-double-left icon-large imgButton" 
+                    onclick="closeLibrary()">
+            </i>
+
             <!-- media from api -->
             
-                <div id="nasaImg" class="nasaImg"></div>
+            <div id="nasaImg" class="nasaImg"></div>
         </div>
-
-
     </main>
     <!---  scripts -->
     <script src="./assets/js/main.js"></script>
@@ -74,9 +78,3 @@
 </body>
 
 </html>
-
-<!-- 
-TODO description on hover - gallery
-TODO another quick interactive api
-
--->

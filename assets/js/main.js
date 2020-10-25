@@ -23,7 +23,7 @@ function showData(data) {
 
     document.getElementById("title").innerHTML = data.title;
     document.getElementById("date").innerHTML = data.date;
-    //document.getElementById("pic").src = data.hdurl;
+    // document.getElementById("pic").src = data.hdurl;
     document.getElementById("explanation").innerHTML = data.explanation;
 
     if (data.media_type == "video") {
@@ -48,9 +48,8 @@ window.onclick = function (event) {
 
 // THIS IS THE SEARCH LIBRARY REQUEST
 const searchUrl = "https://images-api.nasa.gov/";
-const query = "search?q="; //+ "image"; //"&description=" + ""
+const query = "search?q=";
 
-// @ts-check
 function searchBox() {
     const Input = document.getElementById("searchInput").value;
 
@@ -69,7 +68,6 @@ function searchBox() {
     xhr.send();
 }
 // sending search results to the DOM
-// @ts-check
 function Library(result) {
 
     for (var i = 0; i < result.collection.items.length; i++) { //the line beneath, appending to html, is one line to get rid of linebreak issue in jshint - vscode
