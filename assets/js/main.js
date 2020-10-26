@@ -71,7 +71,7 @@ function searchBox() {
 function Library(result) {
 
     for (var i = 0; i < result.collection.items.length; i++) { //the line beneath, appending to html, is one line to get rid of linebreak issue in jshint - vscode
-        document.getElementById("nasaImg").innerHTML += '<div><a target="_blank" alt="Nava earth images" href="' + result.collection.items[i].links[0].href + '"><span class="description"> ' + result.collection.items[i].data[0].description + '</span><img class="item" width="600" height="600" src="' + result.collection.items[i].links[0].href + '"></a></div>';
+        document.getElementById("nasaImg").innerHTML += '<div><a target="_blank" alt="Nava earth images" href="' + result.collection.items[i].links[0].href + '"><div class="description"> ' + result.collection.items[i].data[0].description + '</div><img width="350" height="350" src="' + result.collection.items[i].links[0].href + '"></a></div>';
     }
 }
 
