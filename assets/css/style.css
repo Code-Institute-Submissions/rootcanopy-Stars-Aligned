@@ -33,8 +33,10 @@ body {
 
 /*------ Apod button ----- */
 
-button.myBtn {
-    font-size: 1.25em;
+button.myBtn,
+input {
+    font-size: 1.5em;
+    display: inline-block;
     font-family: 'Coustard';
     background: rgba(0, 0, 0, 0.7);
     color: white;
@@ -43,14 +45,14 @@ button.myBtn {
     cursor: pointer;
     position: relative;
     transition: .5s ease;
-    top: 20%;
-    margin: 3em;
-
+    margin-top: 40px
 }
 
 
 button:hover,
-button:active {
+button:active,
+input:hover,
+input:active {
     /* active not working */
     border-color: #fa923f;
     color: #fa923f;
@@ -99,24 +101,23 @@ button:active {
 /*----- library Search -----*/
 input {
     height: 40px;
-    font-size: 20px;
+    font-size: 1.5rem;
     position: relative;
 }
 
 .search {
-    max-width: 173px;
+    max-width: 200px;
     margin: 0 auto;
     position: relative;
     text-align: center;
 }
 
 .search input {
-    margin-top: 100px;
+    margin-top: 100px !important;
     margin-bottom: 100px;
     text-indent: 10px;
     font-family: 'Space+Mono', sans-serif;
-    font-size: 1em;
-    color: black;
+    font-size: 1rem;
 }
 
 .fa-search:hover,
@@ -125,7 +126,6 @@ input {
 }
 
 .fa-search {
-    color: black;
     cursor: pointer;
 }
 
@@ -138,23 +138,20 @@ input {
 
 .search #searchInput {
     margin-top: 0px;
-    background: rgba(129, 125, 125, 0.4);
-}
-
-.search #searchInput {
-    color: grey;
+    background: transparent;
 }
 
 .search input#searchInput:hover {
     transition-duration: .5s ease-in;
-    color: rgb(46, 40, 40)
+    color: #fa923f
 }
 
 .search input#searchInput:hover,
 .search input#searchInput:focus,
 .search input#searchInput:active {
-    outline: #fa923f;
-    background: transparent;
+    border-color: #fa923f;
+    background: rgba(129, 125, 125, 0.4);
+    color: #fafafa;
 }
 
 .search a:hover {
@@ -245,11 +242,11 @@ i.fa-arrow-up:focus {
 .q_main {
     color: #fafafa;
     position: relative;
-    font-weight: 200;
+    font-weight: 300;
     width: 0%;
     top: 30%;
     margin: auto;
-    font-size: 15px;
+    font-size: 1.5rem;
     font-style: italic !important;
     letter-spacing: 2px;
 }
@@ -272,11 +269,12 @@ i.fa-arrow-up:focus {
     .search .fa-search {
         font-size: 25px;
     }
-    .quote {
-        font-size: 1rem;
+    .quote, p {
+        font-size: 18px;
     }
     button.myBtn {
-        font-size: 18px;
+        font-size: 20px;
+        display: inline
     }
     iframe {
         width: 300px;
