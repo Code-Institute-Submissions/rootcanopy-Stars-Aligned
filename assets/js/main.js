@@ -23,7 +23,7 @@ function showData(data) {
 
     document.getElementById("title").innerHTML = data.title;
     document.getElementById("date").innerHTML = data.date;
-    // document.getElementById("pic").src = data.hdurl;
+    document.getElementById("pic").src = data.hdurl;
     document.getElementById("explanation").innerHTML = data.explanation;
 
     if (data.media_type == "video") {
@@ -71,7 +71,7 @@ function searchBox() {
 function Library(result) {
 
     for (var i = 0; i < result.collection.items.length; i++) { //the line beneath, appending to html, is one line to get rid of linebreak issue in jshint - vscode
-        document.getElementById("nasaImg").innerHTML += '<div><a target="_blank" alt="Nava earth images" href="' + result.collection.items[i].links[0].href + '"><div class="description"> ' + result.collection.items[i].data[0].description + '</div><img width="350" height="350" src="' + result.collection.items[i].links[0].href + '"></a></div>';
+        document.getElementById("nasaImg").innerHTML += '<div><a target="_blank" alt="Nava earth images" href="' + result.collection.items[i].links[0].href + '"><div class="description"> ' + result.collection.items[i].data[0].description + '</div><img width="300" height="350" src="' + result.collection.items[i].links[0].href + '"></a></div>';
     }
 }
 

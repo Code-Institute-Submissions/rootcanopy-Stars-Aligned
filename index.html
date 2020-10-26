@@ -11,73 +11,77 @@
 
 <body>
     <main>
-        <!-- This is the star background-->
+        <!-- star background -->
         <div class="galaxy">
             <div class="stars"></div>
         </div>
+        <!-- img bg -->
+        <div id="bg-img">
 
-        <!-- photo of the day button -->
-        <button id="myBtn" class="myBtn" onclick="apiCall()">Photo of The Day</button>
-        <!--  modal   body -->
-        <div id="modalA" class="modal">
-            <!-- button to close modal -->
-            <span id="closePOD" onclick="closeBtn()">&times;</span>
+            <!-- photo of the day button -->
+            <button id="myBtn" class="myBtn" onclick="apiCall()">Photo of The Day</button>
+            <!--  modal   body -->
+            <div id="modalA" class="modal">
+                <!-- button to close modal -->
+                <span id="closePOD" onclick="closeBtn()">&times;</span>
 
-            <div class="apod-content">
-                <!-- pic of day content-->
-                <h3 id="title"></h3>
-                <h4>Date:<br><span id="date"></span></h4>
-                <!--<img id="pic" src="" alt="NASA">-->
-                <div id="mediaContainer"></div>
-                <p id="explanation"></p>
-            </div>
-        </div>
-
-        <!-- Search input --> 
-        <div class="container-fluid">    
-            <div class="search">
-                <input class="input-group" id="searchInput" type="search" placeholder="Search images ..">
-                <!-- This is the user search button -->
-                <span class="clickerClose">
-                    <i onclick="searchBox()" class="fa fa-search"></i>
-                </span>
-            </div>
-        </div>
-
-        <!-- The quote -->
-        <div class="container">
-            <div class="qoute">
-                <span class="q_main">
-                    <p>"Man must rise above the Earth—to the top of the atmosphere and beyond. For only thus will he fully understand the world in which he lives. 
-                        Astronomy compels the soul to look upward, and leads us from this world to another."
-                    </p>
-                </span>
-                </br>
-                
-                <div class="unknown">
-                    -Unknown
+                <div class="apod-content">
+                    <!-- pic of day content-->
+                    <h3 id="title"></h3>
+                    <h4>Date:
+                        <span id="date"></span>
+                    </h4>
+                    <img id="pic" src="" alt="NASA">
+                    <div id="mediaContainer"></div>
+                    <p id="explanation"></p>
                 </div>
             </div>
+
+            <!-- Search input --> 
+            <div class="container">    
+                <div class="search">
+                    <input class="input-group" id="searchInput" type="search" placeholder="Search images ..">
+                    <!-- This is the user search button -->
+                    <span class="clickerClose">
+                        <i onclick="searchBox()" class="fa fa-search"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- The quote -->
+            <div class="container">
+                <div class="qoute">
+                    <span class="q_main">
+                        <p>"Man must rise above the Earth—to the top of the atmosphere and beyond. For only thus will he fully understand the world in which he lives. 
+                            Astronomy compels the soul to look upward, and leads us from this world to another."
+                        </p>
+                    </span>
+                    </br>
+                    
+                    <div class="unknown">
+                        -Unknown
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image modal library-->
+            <div id="nasaLib" class="modal">
+                <!-- back button for modal and reload page ()-->
+                <i id="buttonClose" onClick="reloadThePage()" 
+                    class="fa fa-angle-double-left imgButton" 
+                        onclick="closeLibrary()">
+                </i>
+
+                <!-- media from api -->
+                <div id="nasaImg" class="nasaImg grid"></div>
+                
+                <!-- Scroll up -->
+                <button class="topBtn">
+                    <i class="fa fa-arrow-up"></i>
+                </button>
+
+            </div>
         </div>
-
-        <!-- Image modal library-->
-        <div id="nasaLib" class="modal">
-            <!-- back button for modal and reload page ()-->
-            <i id="buttonClose" onClick="reloadThePage()" 
-                class="fa fa-angle-double-left imgButton" 
-                    onclick="closeLibrary()">
-            </i>
-
-            <!-- media from api -->
-            <div id="nasaImg" class="nasaImg grid"></div>
-            
-            <!-- Scroll up -->
-            <button class="topBtn">
-                <i class="fa fa-arrow-up"></i>
-            </button>
-
-        </div>
-
     </main>
     <!---  scripts -->
     <script src="./assets/js/main.js"></script>
