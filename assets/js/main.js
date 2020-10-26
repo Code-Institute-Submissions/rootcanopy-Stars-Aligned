@@ -71,7 +71,7 @@ function searchBox() {
 function Library(result) {
 
     for (var i = 0; i < result.collection.items.length; i++) { //the line beneath, appending to html, is one line to get rid of linebreak issue in jshint - vscode
-        document.getElementById("nasaImg").innerHTML += '<div class="images"><a target="_blank" alt="Nava earth images" href="' + result.collection.items[i].links[0].href + '"><div class="description"> ' + result.collection.items[i].data[0].description + '</div><img class="item" width="600" height="600" src="' + result.collection.items[i].links[0].href + '"></a></div></div>';
+        document.getElementById("nasaImg").innerHTML += '<div class="images"><a target="_blank" alt="Nava earth images" href="' + result.collection.items[i].links[0].href + '"><div class="description"> ' + result.collection.items[i].data[0].description + '</div><img class="item column" width="600" height="600" src="' + result.collection.items[i].links[0].href + '"></a></div></div>';
     }
 }
 
@@ -88,20 +88,37 @@ input.addEventListener("keyup", function (event) {
         // clear search
     }
 });
-//to display the decription tags on images
-function showInfo(element) {
-    element.style.display = "block";
-}
 
-function noInfo(element) {
-    element.style.display = "none";
-}
-
-//CLOSE FUNCTION FOR SEARCH LIBRARY
+// CLOSE FUNCTION FOR SEARCH LIBRARY
 function closeLibrary() {
     document.getElementById("nasaLib").style.display = "none";
 }
-//RELOADS THE PAGE PRESSING BACK SO NO STORED CACHE IN SEARCH INPUT
+// RELOADS THE PAGE PRESSING BACK SO NO STORED CACHE IN SEARCH INPUT
 function reloadThePage() {
     window.location.reload();
+}
+
+// SCROLL BTN TO TOP
+var topBtn = document.querySelector('#topBtn');
+var root = document.documentElement
+var TOGGLE_RATIO = 0.80
+
+function scrollFunction() {
+    var scrollTotal = root.scrollHeight - root.clientHeight
+    if ((root.scrollTop / scrollTotal ) > TOGGLE_RATIO ) {
+        topBtn.classList.add("showBtn")
+    } else {
+        topBtn.classList.remove("showBtn")
+        console.log('scroll')
+    }
+}
+
+// WHEN USER CLICKS BTN
+function scrollToTop() {
+    root.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    })
+    scrollToTop.addEventListener("click", scrollToTop)
+    document.addEventListener("scroll", scrollFunction)
 }
