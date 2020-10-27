@@ -1,6 +1,9 @@
 # Stars-Aligned 
 ![Alt Text](https://media.giphy.com/media/aGeePr7nv6ra8/giphy.gif)
 
+https://rootcanopy.github.io/Stars-Aligned/
+
+---
 
 ## Project Info
 When searching for API's back when we started this project I went through so many and wanted to use them all, but when I seen the NASA page on https://www.openapis.org/ it immediately captured my interest. I've always been interested in the sky at night and how it provokes my curiosity. I was fond of the telescope growing up and collected some navigational books which I still have today(well, my parents still have in Ireland). So it's pretty cool to have built a site which has so many fascinating images and it's also encouraged me to pick-up a past-time again and take some more time out in the dark to admire the beauty that we completely miss.
@@ -80,7 +83,7 @@ Using Git Command Line to upload to a repository
 Spring a terminal and log these commands:
 git init to initialize a new repository
 git add README.md to add README.md file to repository
-git commit -m "Initial commit" to add a message for first commitement.
+git commit -m "Initial commit" to add a message for first commitment.
 git remote add origin https://github.com/{user}/{your_repository_name}.git to assign repository
 git push -u origin master to upload files to the repository
 
@@ -99,6 +102,18 @@ Under the source section select the 'master branch' option.
 A message should appear - 'Your site is ready to be published at https://$YourLogin.github.io/$RepositoryName/
 Your website has hopefully been deployed.
 
+And also, to keep gh-pages up-to-date after deployment, because we all know it'll never be finished :
+
+$ git add .
+$ git status // to see what changes are going to be commited
+$ git commit -m 'Some descriptive commit message'
+$ git push origin master
+
+$ git checkout gh-pages // go to the gh-pages branch
+$ git rebase master // bring gh-pages up to date with master
+$ git push origin gh-pages // commit the changes
+$ git checkout master // return to the master branch
+
 ---
 
 ## Media
@@ -107,6 +122,7 @@ Your website has hopefully been deployed.
 - The Galaxy background Im not actually sure where it came from now and unfortunately I haven't been    able to find the exact source. Originally the site was using particles.js but it got a little complicated so then I began using the stars.
 - I used this guide (https://dev.to/mugas/create-a-image-gallery-with-css-grid-and-flebox-5lo) to figure out the image gallery, many attempts had been made on my own but it just wasnt working out the way I wanted.
 - The images used in the wireframes I grathered from Pixabay
+- And the favicon came from flaticon :)
 
 ---
 
