@@ -1,5 +1,6 @@
-# Stars-Aligned
+# Stars-Aligned 
 ![Alt Text](https://media.giphy.com/media/aGeePr7nv6ra8/giphy.gif)
+
 
 ## Project Info
 When searching for API's back when we started this project I went through so many and wanted to use them all, but when I seen the NASA page on https://www.openapis.org/ it immediately captured my interest. I've always been interested in the sky at night and how it provokes my curiosity. I was fond of the telescope growing up and collected some navigational books which I still have today(well, my parents still have in Ireland). So it's pretty cool to have built a site which has so many fascinating images and it's also encouraged me to pick-up a past-time again and take some more time out in the dark to admire the beauty that we completely miss.
@@ -7,13 +8,23 @@ When searching for API's back when we started this project I went through so man
 - Here is the link to the NASA site where the key is recieved.
 https://api.nasa.gov/
 
+---
 
 ## UX
 
+The website was created for better visualizing of the images gathered from the Nasa APi. I felt with a relatively dark theme it would highlight the awesome glorious colors of the sky above us. I also felt I did need so much going on around the site, kept it simple so to speak to the user could enjoy the images and colors abitmore.
 
+![landing page](assets/pic/1.png)
+![APOD](assets/pic/3.png)
+![Img gallery](assets/pic/4.png)
+![on mobile](assets/pic/2.png)
 
 ### User Stories
 
+- I was able to see the Nasa's APOD in the mornings before, work?
+- I was able to move around easier and wasn't distracted.
+- I was able to get some information regarding the images.
+- I felt a little more educated about our planet? 
 
 ## Features
 
@@ -36,9 +47,12 @@ In the coming months if I do get to work on this I think I would concentrate mor
 ---
 
 ## Technologies Used
-VSCode - LiveServer, Arch Linux and the terminal to setup the project and manage files and folders. My Lg TV was also used for most of the project until I realised the sizing was completely different so I dragged the browser over to the TV monitor every now and then to see how it was looking.
-HTML5, CSS, Bootstrap4 - minimally maybe not at all, JavaScript, FontAwesome, GoogleFonts,
-API: NASA APOD & Image Library
+- VSCode - LiveServer, Arch Linux and the terminal to setup the project and manage files and folders. 
+- My Lg TV was also used for most of the project until I realised the sizing was completely different so I dragged the browser over to the TV monitor every now and then to see how it was looking.
+- HTML5, CSS, Bootstrap4 - minimally maybe not at all, JavaScript, FontAwesome
+-API: NASA APOD & Image Library
+- Pencil was used for the wireframes
+- Markdown preview for the Readme
 
 ---
 
@@ -73,7 +87,7 @@ git push -u origin master to upload files to the repository
 
 Project is deployed @ GitHub.
 Github was used in deployement process as it is integrated, simple and there is no need to use additional services.
-It also containt Version Control and everything is uploaded using terminal commands (git)
+It also contained Version Control and everything is uploaded using terminal commands (git)
 
 How was it done ?
 
@@ -92,12 +106,11 @@ Your website has hopefully been deployed.
 - The background image came from unsplash.
 - The Galaxy background Im not actually sure where it came from now and unfortunately I haven't been    able to find the exact source. Originally the site was using particles.js but it got a little complicated so then I began using the stars.
 - I used this guide (https://dev.to/mugas/create-a-image-gallery-with-css-grid-and-flebox-5lo) to figure out the image gallery, many attempts had been made on my own but it just wasnt working out the way I wanted.
+- The images used in the wireframes I grathered from Pixabay
 
 ---
 
 ## Acknowledgements
 
 I would like to say a big thanks to Neil from CodeInstitute for giving me so many opportunities over the last few months. I cant express my gratitude enough.
-Also, Kevin and Xav, while pretty much picking off where I left off months ago with this, I remembered alot of what I had learned from them both and I really enjoyed the experience of having them as mentors.
-
-https://rootcanopy.github.io/Stars-Aligned/
+Also, Kevin and Xav, while pretty much picking up where I left off months ago with this, I remembered alot of what I had learned from them both and I really enjoyed the experience of having them as mentors.
