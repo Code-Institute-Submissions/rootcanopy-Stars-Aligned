@@ -37,9 +37,9 @@ function showData(data) {
 function closeBtn() {
     document.getElementById("modalA").style.display = "none";
 }
+
 // THIS ENSURES THE USER CAN CLICK ANYWHERE TO ESCAPE
 var modal = document.getElementById("modalA");
-
 window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
@@ -71,7 +71,7 @@ function searchBox() {
 function Library(result) {
 
     for (var i = 0; i < result.collection.items.length; i++) { //the line beneath, appending to html, is one line to get rid of linebreak issue in jshint - vscode
-        document.getElementById("nasaImg").innerHTML += '<div><a target="_blank" alt="Nava earth images" href="' + result.collection.items[i].links[0].href + '"><div class="description"> ' + result.collection.items[i].data[0].description + '</div><img width="300" height="350" src="' + result.collection.items[i].links[0].href + '"></a></div>';
+        document.getElementById("nasaImg").innerHTML += '<div><a target="_blank" alt="Nava earth images" href="' + result.collection.items[i].links[0].href + '"><div class="description"> ' + result.collection.items[i].data[0].description + '</div><img width="350" height="350" src="' + result.collection.items[i].links[0].href + '"></a></div>';
     }
 }
 
@@ -100,17 +100,16 @@ function reloadThePage() {
 
 // SCROLL BTN TO TOP
 var topBtn = document.querySelector('#topBtn');
-var root = document.documentElement
-var TOGGLE_RATIO = 0.80
+var root = document.documentElement;
+var TOGGLE_RATIO = 0.80;
 
 function scrollFunction() {
-    var scrollTotal = root.scrollHeight - root.clientHeight
+    var scrollTotal = root.scrollHeight - root.clientHeight;
     if ((root.scrollTop / scrollTotal ) > TOGGLE_RATIO ) {
-        topBtn.classList.add("showBtn")
+        topBtn.classList.add("showBtn");
     } else {
-        topBtn.classList.remove("showBtn")
-        console.log('scroll')
-    }
+        topBtn.classList.remove("showBtn");
+    };
 }
 
 // WHEN USER CLICKS BTN
@@ -119,6 +118,6 @@ function scrollToTop() {
         top: 0,
         behavior: 'smooth'
     })
-    scrollToTop.addEventListener("click", scrollToTop)
-    document.addEventListener("scroll", scrollFunction)
-}
+    scrollToTop.addEventListener("click", scrollToTop);
+    document.addEventListener("scroll", scrollFunction);
+};
